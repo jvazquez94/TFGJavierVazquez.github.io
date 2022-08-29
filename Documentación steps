@@ -34,6 +34,21 @@ Añadir una textura:
 Para añadir una textura a un component simplemente tenemos que usar el atributo src y añadir la imagen que tengamos como textura. Recuerda que va por debajo del
 color que tenga aplicado la entidad.
 
+Asset Management System:
+Se usa para la puesta en escena. A través de assets, audio, imagens y video podemos recrear o interactuar en el entorno par aañadir cosas. Para más info buscar
+página en la docu.
+
+Añadir un background a la escena:
+Para añadir un background se usa la entidad primitiva sky, pero se puede hacer con imagenes. Para ello podemos añadirlo directamente como src o agrgar un <a-assets> 
+<img id="sdfsd" src="dklsjfsl"> despues en el elemento simplemente en src añadimos la etiqueta #"id" que hemos puesto en ela img en a-assets en id.
+Vale para todo no solo para sky.
+
+Añadir un ground:
+Para añadir un suelo usamos el elemento del plano y hacemos como hemos explicado arriba.
+
+
+
+
 
 
 
