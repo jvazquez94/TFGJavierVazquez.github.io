@@ -46,7 +46,14 @@ Vale para todo no solo para sky.
 Añadir un ground:
 Para añadir un suelo usamos el elemento del plano y hacemos como hemos explicado arriba.
 
+Ajuste de iluminación:
+Con la etioqueta <a-lights> podemos establecer iluminación en la escena. Por defecto añade una, si noestaría todo oscuro. Puede ser de ambiente o direccional.
+Podemos añadir puntual lights que funcionan como bombillas a lo largo de la escena.
+<a-light type="ambien o point" (una de las dos) intensity, color, position...
+Cuiado con jugar con mucha intensidad puede llegar a sobreilumanr los materiales y no poder ver bien la textura, dependiendo donde la pongas se generan sombras
+en los componentes.
 
+Añadir animación.
 
 
 
