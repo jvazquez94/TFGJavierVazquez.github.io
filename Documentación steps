@@ -1,2 +1,39 @@
 STEP 0.
 
+Se tiene que añadir el script de aframe en el <head> para que se aplique todo el framework.
+<a-scene> sw añade en el <body> para poder cargar toda la config que va a requerir los componentes de aframe.
+
+Añadiendo una entidad:
+Entidades primitivas de aframe: box, cylinder, plane y sphere.
+Atributos a destacar <a-box>:
+ - rotation
+ - position
+ - scale
+ - color
+ - depth
+ - fog
+ - height
+ - metalness
+ - roughness
+ - width
+ - src
+ 
+Entidad a 3D:
+La dsitancia se mide en metro, por lo que hay que tener cuidado porque visualment, por ejemplo, una distancia de 10 sin usar VR puede ser distinto que usandolas;
+pudiendo aparecer como algo muy grande dentro de la escena.
+
+Padres a hijos:
+En la escena podemos añadir dentro de una entidad otra para que este en herencia con ella. Si se modifica la psoition por ejemplo del padre, la del hijo tambien se ve afectada.
+
+Añadir un eviroment:
+Con el script: "https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js" podemos añadir diferentes fondos/entornos a nuestra escena.
+En la pagina de github de los desarrolladores podemos ver diferentes tupos: forest, egypt, contact, goldmine, poison, japan, tron, volcano, osiris, default...
+Después de añadir ese script en la escena se añade : <a-entity environment="preset: forest; dressAmount: 500" o el numero de elementos que sea.
+
+Añadir una textura:
+Para añadir una textura a un component simplemente tenemos que usar el atributo src y añadir la imagen que tengamos como textura. Recuerda que va por debajo del
+color que tenga aplicado la entidad.
+
+
+
+
