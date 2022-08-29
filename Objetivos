@@ -1,0 +1,11 @@
+Step 0.
+Probar el uso de manejadores para mover una caja, y funcionamiento del raycaster.
+Identificar problema. Probar dificultad de lo hecho, si se hace dificil, empezar con algo más sencillo como un cambio de color a una entidad. Si se hace fácil probar
+a ligar a ese manejador con objetos.
+
+Página de Jesús: https://gsyc.urjc.es/job -> mirar otros TFGs para ver como están organizados.
+
+Página handler: https://www.npmjs.compackage/super-hands/v/2.1.0?activeTab=readme
+                https://github.com/wmurphyrd/aframe-super-hands-component
+                
+Para la realización de cada documentación poner: capitulo - resultado - final - tecs usadas.
