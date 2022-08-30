@@ -65,6 +65,8 @@ a continuación cursor como su hijo.
  ->CURSOR:
    Es un componente de raycaster. Y escucha eventos y provee estados para ser ejecutados como: mousedown, mouseup, mouseenter, mouseleave y click events. 
    Se usa el raycaster-intersection y raycaster-intersection-cleared para capturar la entidad intersectada mas cercana.
+   Se recomienda usar el componente showLine del raycaster para visualizar mejor las acciones del cursor.
+   
    
 
 
