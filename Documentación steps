@@ -54,6 +54,18 @@ Cuiado con jugar con mucha intensidad puede llegar a sobreilumanr los materiales
 en los componentes.
 
 Añadir animación.
+Podemos añadir animación a una entidad con animation. Propiedades que tiene este built-in: property, from, to, isRawProperty, type, dely, dir, loop... Ver docu animation API.
+De esta forma estamos desplazando en la propiedad sobre el eje Y, jacia 2.2 que son como 20 centrimetros mayor, teniendo una direccion alternativa para repetir de arriba abajo
+y con una duracion de 2000 ms y con loop infinito. -> <a-box animation="property: object3D.position.y; to: 2.2; dir: alternative; dur: 2000; loop: true" ...></..>
+
+Añadir interacción:
+Se usa el built-in de cursor para aplicar interaccion con los elementos. Hay que crearlo como hijo de la camara. Por lo que debemos crear el componente camara y
+a continuación cursor como su hijo.
+
+ ->CURSOR:
+   Es un componente de raycaster. Y escucha eventos y provee estados para ser ejecutados como: mousedown, mouseup, mouseenter, mouseleave y click events. 
+   Se usa el raycaster-intersection y raycaster-intersection-cleared para capturar la entidad intersectada mas cercana.
+   
 
 
 
