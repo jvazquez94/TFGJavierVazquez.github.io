@@ -67,6 +67,11 @@ a continuación cursor como su hijo.
    Se usa el raycaster-intersection y raycaster-intersection-cleared para capturar la entidad intersectada mas cercana.
    Se recomienda usar el componente showLine del raycaster para visualizar mejor las acciones del cursor.
    
+   El uso del raycaster es para seleccionar los elementos de la escena que quieres que puedan tener animacion. En este caso lo que hay que hacer es añadir el atributo
+   raycaster="objects: .clickable" (o lo que quieras) y luego en los objetos añadir la clase con esa etiqueta. Los objetos que no tengan esa etiqueta no produce
+   animación.
+   
+   
    
 
 
