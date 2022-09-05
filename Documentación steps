@@ -71,7 +71,11 @@ a continuación cursor como su hijo.
    raycaster="objects: .clickable" (o lo que quieras) y luego en los objetos añadir la clase con esa etiqueta. Los objetos que no tengan esa etiqueta no produce
    animación.
    
+   Imagenes sobre los eventos y propiedades del cursor*
    
+ Texto:
+ 
+ 
    
 
 
