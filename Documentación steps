@@ -76,12 +76,21 @@ a continuación cursor como su hijo.
    
   Por problemas deje un mes esto, retomamos con curso de youtube para WebVR con aframe, ya que me estaba liando yo solo con la documentación que hay en la página oficial.
   
+  Project name in glitch: brawny-agate-dormouse
+  
   1. Basic Primitives And HTML Attributes (A-Frame Tutorial - WebVR)
   
   Lo primero que inserta en la escena es una caja, hay que tener en cuenta que de manera por defecto es decir: <a-box></..> no aparecería nada en el browser ya que
   la camara está en primera persona por defecto en la misma posición de la caja. 
   Si accedemos al menú de visualizar en 3D podemos analizar la escena y movernos por ella, comprobando que la caja está ahí. Para moverte por la escena 3D: Si clicamos
-  y mantenemos el mouse hacia abajo veremos la caja justo al lado. Para alejarnos de la caja y cambiar la posicion, pulsamos WASD para movernos en la escena.
+  y mantenemos el mouse hacia abajo veremos la caja justo al lado (buscarlo si simplemente hacia abajo no está). Para alejarnos de la caja y cambiar la posicion, pulsamos W,A,S,D mientras mantenemos el click con el ratón
+  para movernos en la escena.
+  Si salimos en la vista web ya se puede apreciar la caja. Recuerda que la caja es un elemento por defecto pero todos los primitivos acaban siendo entidades.
+  Atributos: color, width, height, deepth
+  Recuerda que las distancias en Aframe están en metros, dato a tener en cuenta al estar en escala para diseñar las escenas ya que el punto de vista es de una persona.
+  Para el primitivo cylinder: color, height, radius, segments-radial, open-ended (para quitar las caras del segmento a true si se quiere quitar y dejar abierto),
+  para ver el resto de las caras y no este a la mitad el útlimo atributo: side="double".
+  
   
   
   
