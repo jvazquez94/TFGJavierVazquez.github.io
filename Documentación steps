@@ -96,7 +96,9 @@ a continuación cursor como su hijo.
   El elemento camara por defecto se posicion en el modo VR en el 0 0 0 y en el modo escritorio 0 1 0. Cuando se añade un elemento con una imagen se pone en la etiqueta
   <a-assets> <img> la imagen precargada para luego añadirla a un objeto. En Glitch para precargar una imagen desde los assets se copia el link que te ofrece y se 
   pega en el src.
-  
+  Con el atributo de camera: user-height podemos aplicar la vista de altura que queramos, en el ejemplo usamos 1.6 que en metros sería la estatura minima de un adulto.
+  No usar el atributo position directamente sobre el elemento de a-camera, mejor meter a-camera en a-entity y usar el position en esta etiqueta padre. De esta forma se 
+  sincroniza el atributo de la altura de ojo con la posición.
   
  
    
