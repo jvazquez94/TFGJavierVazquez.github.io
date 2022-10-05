@@ -113,6 +113,10 @@ a continuación cursor como su hijo.
  
  
  4.Rotation and Relative Rotation.
+ Es igual que la posicion pero con el atributo de rotation.
+ 
+ 
+ 5.Scale, Relative Scale, and Reflection.
  
  
    
