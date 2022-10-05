@@ -99,6 +99,8 @@ a continuación cursor como su hijo.
   Con el atributo de camera: user-height podemos aplicar la vista de altura que queramos, en el ejemplo usamos 1.6 que en metros sería la estatura minima de un adulto.
   No usar el atributo position directamente sobre el elemento de a-camera, mejor meter a-camera en a-entity y usar el position en esta etiqueta padre. De esta forma se 
   sincroniza el atributo de la altura de ojo con la posición.
+  Eliminaron el user-height en una de las versiones actualizadas asi que se usa de manera similar salvo que solo con position 0 1.6 0.
+  
   
  
    
