@@ -100,6 +100,8 @@ a continuación cursor como su hijo.
   No usar el atributo position directamente sobre el elemento de a-camera, mejor meter a-camera en a-entity y usar el position en esta etiqueta padre. De esta forma se 
   sincroniza el atributo de la altura de ojo con la posición.
   Eliminaron el user-height en una de las versiones actualizadas asi que se usa de manera similar salvo que solo con position 0 1.6 0.
+  Se pueden añadir más de una cámara en la escena, para dar diferentes tipos de vista. Usando el atributo active, añadimos cual quieres que sea la que esta usandose.
+  con true o false en las diferentes que haya.
   
   
  
