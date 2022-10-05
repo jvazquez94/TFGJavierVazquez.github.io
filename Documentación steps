@@ -108,7 +108,9 @@ a continuación cursor como su hijo.
  3. Position and Relative Positioning.
  Los ejes x y z se corresponden así para declarar la posición de los elementos de la escena.
  Se puede instanciar entidades a otras pasando a relacionarse como padre e hijo, siendo la posición origen del hijo el centro de referencia de la posición del padre.
- Para alinear por ejemplo un circle con la superficie del padre, usar el 0.11 en el eje z de su posición y no quede con reflejos raros superponiendose el otro.
+ Para alinear por ejemplo un circle con la superficie del padre, usar el 0.11? (sobre la depth del objeto padre?) en el eje z de su posición y no quede con reflejos raros superponiendose el otro.
+ Tener cuidado cuando ubicamos un objeto fuera del padre puesto que hay que calcular sumandole la distancia de la posicion del objeto que tenemos de referencia.
+ Si se cambia la posición del padre la del hijo cambia.
  
  
  
