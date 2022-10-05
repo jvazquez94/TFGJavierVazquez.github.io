@@ -79,8 +79,7 @@ a continuación cursor como su hijo.
   
   Project name in glitch: brawny-agate-dormouse
   
-  1. Basic Primitives And HTML Attributes (A-Frame Tutorial - WebVR)
-  
+  1. Basic Primitives And HTML Attributes (A-Frame Tutorial - WebVR)  
   Lo primero que inserta en la escena es una caja, hay que tener en cuenta que de manera por defecto es decir: <a-box></..> no aparecería nada en el browser ya que
   la camara está en primera persona por defecto en la misma posición de la caja. 
   Si accedemos al menú de visualizar en 3D podemos analizar la escena y movernos por ella, comprobando que la caja está ahí. Para moverte por la escena 3D: Si clicamos
@@ -112,6 +111,8 @@ a continuación cursor como su hijo.
  Tener cuidado cuando ubicamos un objeto fuera del padre puesto que hay que calcular sumandole la distancia de la posicion del objeto que tenemos de referencia.
  Si se cambia la posición del padre la del hijo cambia.
  
+ 
+ 4.Rotation and Relative Rotation.
  
  
    
