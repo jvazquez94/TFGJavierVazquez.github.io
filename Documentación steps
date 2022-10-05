@@ -92,6 +92,10 @@ a continuación cursor como su hijo.
   para ver el resto de las caras y no este a la mitad el útlimo atributo: side="double".
   
   
+  2.Camera Primitive.
+  El elemento camara por defecto se posicion en el modo VR en el 0 0 0 y en el modo escritorio 0 1 0. Cuando se añade un elemento con una imagen se pone en la etiqueta
+  <a-assets> <img> la imagen precargada para luego añadirla a un objeto. En Glitch para precargar una imagen desde los assets se copia el link que te ofrece y se 
+  pega en el src.
   
   
  
