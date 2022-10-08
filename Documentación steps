@@ -117,10 +117,20 @@ a continuación cursor como su hijo.
  
  
  5.Scale, Relative Scale, and Reflection.
+ Podemos escalarar los objetos de la escena con el atributo scale="x x x".
+ Hay que tener cuidado cuando al elemento se le ha aplicado previamente otra transformacón porque los ejes en este caso se escalan sobre lo anteriormente
+ aplicado. En el ejemplo del video, el eje y tiene aplicada antes una rotación (sobre el cilindro) de 90 grados, entonces cuando aplicamos el escalado a dos,
+ no se produce de la misma manera que si no hubieramos aplicado esa rotación, es decir si ha rotado -90 grados en ese eje se escala sobre la nueva posicion de la 
+ rotación producida.
+ La relatividad de la escala se trabaja de igual manera con la relación de herencia entre padres e hijos.
+ Para saber como se transforma a partir de otra, en este caso de una rotación imaginar ejes 
+ y rotar el eje los grados aplicados, después a partir de ahi hacer la escala.
+ Cuando se usa numeros negativos en las transformaciones es lo que se llama reflection.
  
  
-   
-
+ 6.Image Textures and Materials.
+ 
+ 
 
 
 
