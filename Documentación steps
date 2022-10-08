@@ -131,6 +131,21 @@ a continuación cursor como su hijo.
  6.Image Textures and Materials.
  Usame el Assets Manage System para precargar las imagenes de por ejemplo materiales y que no consuma tanta memoria. Se añade poniendo el elemento <a-assets>
  y dentro <img id.. src...> sin cerrar la etiqueta de img.
+ Para repetir la textura en el eje X Y se usa el atributo repeat= "1 1" es el default para ambos ejes. 
+ El uso de los atributos de la normal se usan sobre todo en desarrollo de videojuegos para dar sombreado realista a las texturas de los assets.
+ Los atributos usados para el texturizado de la normal son normal-map, normal-texture-repeat, normal-scale.
+ Para que la luz concuerde con la posicion del objeto lo mejor es que el signo de la escala normal concuerde con la del eje de la posición, para que asi el reflejo
+ de la luz concuerde.
+ Para controlar el reflejo de la luz en la textura usamos el atributo roughness="0.5" por defecto.
+ Tambien los atributos los podemos asignar no en la etiqueta del primitivo, si no en un atributo llamado material="color: blue; position:"x x x"; ..
+ Cuando además de esto usamos el atributo scale y el eje X lo ponemos a -1 tenemos un efecto muy particular que consiste en que las caras segun vamos rotando se vuelven
+ transaparentes (efecto sims) -> creo que lo ha quitado porque a mi no se me aplica.
+ Se puede aplicar el atributo roughness a los maeriales por defecto sin definir una textura como imagen.
+ El atributo shader tambien es otro efecto sobre el texturizado y puede ser standar (que es con brillo) o flat (Que es opaco sin brillo).
+ 
+ 
+ 7.Image and Curve Image primitives.
+ 
  
  
 
