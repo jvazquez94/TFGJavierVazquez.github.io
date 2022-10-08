@@ -1,7 +1,7 @@
 # TFG
 #Javier Vázquez Moreno
 
-Proyecto en desarrollo en la plataforma de Glitch, directorio de trabajo: https://glitch.com/edit/#!/brawny-agate-dormouse?path=position_relative.html%3A20%3A36
+Proyecto sobre control de drones en webVR con Aframe; en desarrollo en la plataforma de Glitch, directorio de trabajo: https://glitch.com/edit/#!/brawny-agate-dormouse?path=position_relative.html%3A20%3A36
 
 step prev -> manejo de la herramienta con tutorial de Youtube (documentado).
 
