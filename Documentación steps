@@ -129,6 +129,8 @@ a continuación cursor como su hijo.
  
  
  6.Image Textures and Materials.
+ Usame el Assets Manage System para precargar las imagenes de por ejemplo materiales y que no consuma tanta memoria. Se añade poniendo el elemento <a-assets>
+ y dentro <img id.. src...> sin cerrar la etiqueta de img.
  
  
 
