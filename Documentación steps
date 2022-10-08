@@ -142,6 +142,7 @@ a continuación cursor como su hijo.
  transaparentes (efecto sims) -> creo que lo ha quitado porque a mi no se me aplica.
  Se puede aplicar el atributo roughness a los maeriales por defecto sin definir una textura como imagen.
  El atributo shader tambien es otro efecto sobre el texturizado y puede ser standar (que es con brillo) o flat (Que es opaco sin brillo).
+ Para aplicar transparencia al objeto se usa el atributo opacity="0.5"
  
  
  7.Image and Curve Image primitives.
