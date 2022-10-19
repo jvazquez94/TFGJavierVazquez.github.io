@@ -155,6 +155,12 @@ a continuación cursor como su hijo.
  sin distorsion.
  El componente para añadir una imagen curva es: <a-curvedimage src="" theta-length="210" theta-start=0" radius="" position="">.
  La rotacion depende de la graduacion del parametro theta.
+ Para calcular el arco usa la pagina dejada en favs: handymath.com y asi establecer los parametros correctos. La anchura se calcula como en una imagen normal (paso anterior)
+ 
+ 8.Breaking primitives down.
+ 
+ 
+ 
  
  
  
