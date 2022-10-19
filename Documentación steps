@@ -147,6 +147,16 @@ a continuación cursor como su hijo.
  
  
  7.Image and Curve Image primitives.
+ Hay que tener en cuenta la escala de las imaagenes para que a la hora de escalar en la escena se haga de forma correcta y no se distorsione por un mal concepto de 
+ las proporciones. Para ello nos ofrece una fórmula para pasar a milimetros las longitud y ancho de al imagen para añadir a nuestra escena.
+ La fórmula es: Ancho de imagen (m) = ancho (m) / IMG ancho (px) * IMG altura (px) que es: 1 metro(que es la unidad de medida que se usa en aframe) entre 1024 pixeles
+ por la altura de la imagen que usemos.
+ De esta manera el resultado que nos de es el que aplicamos como milimetros al ancho de la imagen para que luego cuando usemos el componente scale se aplique todo 
+ sin distorsion.
+ El componente para añadir una imagen curva es: <a-curvedimage src="" theta-length="210" theta-start=0" radius="" position="">.
+ La rotacion depende de la graduacion del parametro theta.
+ 
+ 
  
  
  
