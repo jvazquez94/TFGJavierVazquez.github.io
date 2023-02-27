@@ -165,6 +165,7 @@ a continuación cursor como su hijo.
  Uso de imagenes para texturizado del suelo con componentes ya usados como la normal, imagenes, repea, rotation, scale, etc.
  Para este video no le ha hecho falta modificar el roughness para el contraste del brillo con el material ya que simplemente con la normal-nmap y normal-texture-repeat,
  le ha conseguido dar el toque necesario para hacerlo realista.
+ Recuerdo con no aadir dentro de la etiqueta a-assets los elementos de la escena ya que si no no se van a visualizar.
  
  
  
