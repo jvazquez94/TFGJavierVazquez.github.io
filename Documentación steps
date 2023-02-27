@@ -158,6 +158,15 @@ a continuación cursor como su hijo.
  Para calcular el arco usa la pagina dejada en favs: handymath.com y asi establecer los parametros correctos. La anchura se calcula como en una imagen normal (paso anterior)
  
  8.Breaking primitives down.
+ -------------------------------------------------------------------------
+ 27-02-2023
+ 
+ 9.Ground.
+ Uso de imagenes para texturizado del suelo con componentes ya usados como la normal, imagenes, repea, rotation, scale, etc.
+ Para este video no le ha hecho falta modificar el roughness para el contraste del brillo con el material ya que simplemente con la normal-nmap y normal-texture-repeat,
+ le ha conseguido dar el toque necesario para hacerlo realista.
+ 
+ 
  
  
  
