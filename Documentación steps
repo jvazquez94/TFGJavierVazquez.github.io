@@ -168,9 +168,20 @@ a continuación cursor como su hijo.
  Recuerdo con no aadir dentro de la etiqueta a-assets los elementos de la escena ya que si no no se van a visualizar.
  
  
+ 10. Sky and 360 grades.
+ El tipo de primitivs a-sky es una circunferenciad e radio por defecto 10000 metros por eso nos da la sensacion de fondo e cielo. Se le puede cambiar el radio con el parametro
+ radius para ver como abarca la esfera del componente. Tambien se le puede hacer doble para que cubra todo el rango del espacio y cubir la esfera al completo duplicando ambas
+ mitades de la esfera,una en el otro semicirculo.
+ Para poner el suelo acorde con el infinito del cielo recordar cambiar los parametros de repeat y normal-textuyre-repeat para que no este todo borroso (generalmente la mitad del valor
+ superficie agrandada.
  
- 
- 
+Usar buenas texturas para que no quede raro.
+Para que no nos afecte por ejemplo en un texturizado de suelo el sombreado de la luz de la escena porque queremos que quede con un toque cartoon, le aplicamos al componente del suelo
+shader:flat para que no refleje esa luz.
+Podemos aplicar imagenes 360 para dar mnas realismo a la escena, página: texturify.com
+
+
+
  
  
  
