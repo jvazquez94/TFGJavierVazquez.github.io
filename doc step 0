@@ -181,6 +181,14 @@ shader:flat para que no refleje esa luz.
 Podemos aplicar imagenes 360 para dar mnas realismo a la escena, página: texturify.com
 
 
+----------------------------------------------------------------------------------------
+28-02-2023
+
+13. Loading an Displaying 3D Models.
+La pagina que usa para descargar modelos gratis de 3D es: skechfab.com
+Para importar archivos 3D o elementos de los assets que no son imagenes usamos la etiqueta <a-asset-item> en los assets del sysrtem management, luego en escena
+añadimos el idcon un elemento <a-entity gltf-model="#ref">. En este caso es un modelo 3D gltf ( Formato de Transmisión de Lenguaje Gráfico.)
+
 
  
  
