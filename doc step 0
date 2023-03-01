@@ -189,8 +189,11 @@ La pagina que usa para descargar modelos gratis de 3D es: skechfab.com
 Para importar archivos 3D o elementos de los assets que no son imagenes usamos la etiqueta <a-asset-item> en los assets del sysrtem management, luego en escena
 añadimos el idcon un elemento <a-entity gltf-model="#ref">. En este caso es un modelo 3D gltf ( Formato de Transmisión de Lenguaje Gráfico.)
 Si se actualiza el nombre de los archivos graficos recuerda renombrarlos en el html, en el caso del .bin, abrirlo y buscar el uri: del json donde se modifica tammbien
-el nombre si no, no aparece en la escena. Al igual donde tengas las texturas, por eso no te carga en glitch. (Me paso a virtual box con linux, ya que con glitch es una limitacion
-importante.
+el nombre si no, no aparece en la escena. Al igual donde tengas las texturas, por eso no te carga en glitch, ya que en el json esta buscando en una carpeta llamada
+textures dentro de la del proyecto y en glitch no deja crear carpetas en los assets, por eso la opcion es o trabajar quitando la ruta de esa carpeta en el fichero
+o trasladar el puesto de trabajo en windows, ya que la virtual box de linux va muy lento.
+
+
 
 
 
