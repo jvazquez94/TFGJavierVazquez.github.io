@@ -211,6 +211,16 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  El atributo easing esta para hacer lineal o no el loop, es decir, para cuando este empezando/terminando el loop se ralentice o vaya mas rapido o sea lineal.
  Se puede jugar con la relación padre e hijo metiendo la animacion dentro de un <a-entity> y despues una caja o cualquier componente para que los efectos
  de la accion sean sobre el padre.
+ -------------------------------------------------------------------------------
+ 02-03-2023
+ Usamos el atributo easing con ease-out para que la acción se produzca con una deceleración al final.
+ También podemos usar el factor de scale para escalar el objeto como una acción; to y pones la escala a la que quieres que cambie. Se puede aplicar efecto rebote en el easing
+ el nombre de la etiqueta del atributo es parecidad a la de deceleración: ease-out-bounce.
+ Tambien se puede animar el color de un componente. El nombre del atributo es material.color para aplicar el cambio de color from x to x.
+ También se puede animar la opacidad con el nombre del atributo material.opacity.
+ 
+ 
+ 
  
  
 
