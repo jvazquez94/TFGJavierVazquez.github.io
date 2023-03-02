@@ -218,6 +218,12 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  el nombre de la etiqueta del atributo es parecidad a la de deceleración: ease-out-bounce.
  Tambien se puede animar el color de un componente. El nombre del atributo es material.color para aplicar el cambio de color from x to x.
  También se puede animar la opacidad con el nombre del atributo material.opacity., tambien se puede con opacity directamente.
+ Para que un componente tenga una accion con respecto a un punto de referencia como se menciona en la leccion anterior hay que meter la componente en una
+ padre que puede ser una entidad vacia y posicionar la entidad padre por ejemplo en el centro (0 0 0) y la hija en otro punto para que las acciones producidas,
+ como por ejemplo la de rotar, se haga sobre el eje del padre si aplicamos en la etiqueta de el, luego si aplicamos en la etiqueta del hijo, ademas de hacer sobre
+ el eje del padre se hace otra sobre ella.
+ Cuidado con la guia de colores ya que en la etiqueta de animacion de from a to solo coge # con el codigo hexadecimal.
+ -------------------------------------------------------------------------------
  
  
  
