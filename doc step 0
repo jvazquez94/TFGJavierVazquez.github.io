@@ -226,6 +226,13 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  -------------------------------------------------------------------------------
  06-03-2023
  Luces y sombras.
+ Para establecer una luz solo hay que introducir un elemento a-entity y poner la componente light="" dentro podemos añadir diferentes atributos. El primero que
+ se establece es el type para el tipo de luz, ambient o point.
+ Para establecer sombras en la escena primero podemos activar o desactivar con el atributo shadow="enabled: true" en la etiqueta scene. Despues tenemos que definir
+ en la luz el atributo castShadow: true para que las fisicas entren en juego. Luego hay que defiinir los objetos que queremos que reciban sombra y los que emitan
+ sombra, para ello en el atributo shadow="receive: true" o "cast: true".
+ Tambien se puede establecer con animaciones de movimiento, por ejemplo, para que la luz siga al objeto.
+ 
  
  
  
