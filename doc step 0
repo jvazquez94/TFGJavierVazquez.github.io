@@ -235,7 +235,7 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  del elemento que queremos que enfoque conel tipo de luz spot.
  ----------------------------------------------------------------------------------
  07-03-2023
- Inspector.
+15.  Inspector.
  Para lanzar el inspector control + alt + I
  Con el control del mouse puedes moverte por la vista del inspector.
  Se puede ajustar por ejemplo un luz desde el inspector poniendola donde quieres, ajustando colo, intensidad, distancia. Y una vez hecho eso le damos al boton
@@ -243,8 +243,12 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  Glitch y tienes que volver a hacerlo.
  Para cambiar la cantidad de espacio que abarca una luz spot se cambia el angle de la entidad.
  
- 
- 
+ 16. Cursor Primitivo y cursor.
+ Se introduce el componente del mouse relacionado con los eventos del framework, ya sean clickEventmouseEnter, Leave....
+ El a-cursor se introduce como hijo dentro de un elemento camera (no es necesario) apareciendo en la escena un circulito por defecto con los bordes negros. 
+ Podemos añadir dentro del cursor en el atributo rayCaster para que enseñe la linea de movimiento del haz.
+ Tiene sentido meter el cursor dentro de una camara para guiarnos con el movimiento que hacemos, despues dentro no hace falta generar un componente cursor,
+ podemos añadir dentro un a-entity y depsues ponerle los atributos cursor position, geometry y material para añadirlo.
  
  
  
