@@ -233,6 +233,15 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  sombra, para ello en el atributo shadow="receive: true" o "cast: true".
  Tambien se puede establecer con animaciones de movimiento, por ejemplo, para que la luz siga al objeto, esto se consigue en la luz con el atributo target y el id 
  del elemento que queremos que enfoque conel tipo de luz spot.
+ ----------------------------------------------------------------------------------
+ 07-03-2023
+ Inspector.
+ Para lanzar el inspector control + alt + I
+ Con el control del mouse puedes moverte por la vista del inspector.
+ Se puede ajustar por ejemplo un luz desde el inspector poniendola donde quieres, ajustando colo, intensidad, distancia. Y una vez hecho eso le damos al boton
+ de arriba a la derecha de copiar enitdad html para copiarla en el fichero. Dato: Tener cuidado que esta seleccionado el elemento porque se quita el inspector en
+ Glitch y tienes que volver a hacerlo.
+ 
  
  
  
