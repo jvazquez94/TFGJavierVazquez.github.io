@@ -251,7 +251,12 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  podemos añadir dentro un a-entity y despues ponerle el atributo cursor, luego añadimos los que necesitemos para modificarlo: position, geometry y material para añadirlo.
  Tambien podemos en el material cambiar el color dependiendo del fondo que tengamos por si se hace dificil distinguirlo.
  
- 
+ 17. Event Set Component.
+ Recomienda insertar el script source de uno de los creadores de aframe: ngokevin -> Github.
+ Se ha movido el repositorio que tenia a https://github.com/amitwaghmare/aframe-event-set-component
+ Hay que añadir la linea de script que añade los eventos:   <script src="https://rawgit.com/ngokevin/aframe-event-set-component/master/dist/aframe-event-set-component.min.js"></script>
+o instalar via NPM (Node Package Management para gestionar paquetes y librerias de JavaScript)
+
  
  
  
