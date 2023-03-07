@@ -241,6 +241,8 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  Se puede ajustar por ejemplo un luz desde el inspector poniendola donde quieres, ajustando colo, intensidad, distancia. Y una vez hecho eso le damos al boton
  de arriba a la derecha de copiar enitdad html para copiarla en el fichero. Dato: Tener cuidado que esta seleccionado el elemento porque se quita el inspector en
  Glitch y tienes que volver a hacerlo.
+ Para cambiar la cantidad de espacio que abarca una luz spot se cambia el angle de la entidad.
+ 
  
  
  
