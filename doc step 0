@@ -248,7 +248,7 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  El a-cursor se introduce como hijo dentro de un elemento camera (no es necesario) apareciendo en la escena un circulito por defecto con los bordes negros. 
  Podemos añadir dentro del cursor en el atributo rayCaster para que enseñe la linea de movimiento del haz.
  Tiene sentido meter el cursor dentro de una camara para guiarnos con el movimiento que hacemos, despues dentro no hace falta generar un componente cursor,
- podemos añadir dentro un a-entity y depsues ponerle los atributos cursor position, geometry y material para añadirlo.
+ podemos añadir dentro un a-entity y despues ponerle el atributo cursor, luego añadimos los que necesitemos para modificarlo: position, geometry y material para añadirlo.
  Tambien podemos en el material cambiar el color dependiendo del fondo que tengamos por si se hace dificil distinguirlo.
  
  
