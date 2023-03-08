@@ -257,6 +257,8 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  Hay que añadir la linea de script que añade los eventos:   <script src="https://rawgit.com/ngokevin/aframe-event-set-component/master/dist/aframe-event-set-component.min.js"></script>
 o instalar via NPM (Node Package Management para gestionar paquetes y librerias de JavaScript)
 
+ -------------------------------------------------------------------------------------------------
+ 08-03-2023
  
  
  
