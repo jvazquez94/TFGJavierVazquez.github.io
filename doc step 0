@@ -261,7 +261,7 @@ o instalar via NPM (Node Package Management para gestionar paquetes y librerias 
  08-03-2023
  src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js" -> script a usar para los events set ya que el anterior NO funcionaba.
  Para usar los eventos tenemos que establecer en el objeto que se desea producir el evento el siguiente formato:
- event-set__[nombre_evento] = "_event: mouseenter; material.color: ..."
+ event-set__[nombre_evento] = "_event: mouseenter; material.color: ...", en el nombre evento no se pueden usar mayusculas pero si '_'.
  Tipos de _event: click, mouseenter, mouseleave, mousedown, mouseup, y fusing.
  
  
