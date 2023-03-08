@@ -259,6 +259,7 @@ o instalar via NPM (Node Package Management para gestionar paquetes y librerias 
 
  -------------------------------------------------------------------------------------------------
  08-03-2023
+ src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js" -> script a usar para los events set ya que el anterior funcionaba.
  
  
  
