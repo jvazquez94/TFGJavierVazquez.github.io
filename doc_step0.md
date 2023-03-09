@@ -75,7 +75,7 @@ a continuación cursor como su hijo.
  
    --------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
- **STEP PREV.** 
+## **STEP PREV.** 
   
   Por problemas deje un mes esto, retomamos con curso de youtube para WebVR con aframe, ya que me estaba liando yo solo con la documentación que hay en la página oficial.
   
