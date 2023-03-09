@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!--Asset Management-->
+      <a-assets>
+        <img id="floor" src="https://cdn.glitch.global/cb242177-735e-42f0-9163-675882043fc7/Passerella_Legno_TopMura_TileMura_baseColor.jpeg?v=1677584258584">
+        <a-asset-item id="traffic" src="https://cdn.glitch.global/cb242177-735e-42f0-9163-675882043fc7/scene_traffic.gltf?v=1678183130856"></a-asset-item>
+        <a-asset-item id="lamp" src="https://cdn.glitch.global/cb242177-735e-42f0-9163-675882043fc7/scene_lamp.gltf?v=1678183153707"></a-asset-item>
+      </a-assets>
+      
+      <a-plane src="#floor"
+               rotation="-90 0 0"
+               position="0 0 -1"
+               scale="20 20"
+               repeat="10 10"
+               normal-texture-repeat="10 10"></a-plane>
+      
+      <a-sky color="#828C9A"></a-sky>
+      
+      <a-entity position="0 0 5">
+        <a-camera></a-camera>
+      </a-entity>
+      
+      <a-entity gltf-model="#traffic"
+                position="2 0 0">
+      </a-entity>
+      
+      <a-entity gltf-model="#lamp"
+                position="-2 1 0">
+      </a-entity>
+      
+      <a-entity light="type: ambient;
+                       intensity: 0.4">
+      </a-entity>
+      
+      <!--Red light-->
+      <a-entity position="2.5314 2.2858 0.13304" id="red-light" light="color: #ff0000; distance: 0.175; intensity: 8; type: point">
+        <a-camera camera="" rotation="" look-controls="" wasd-controls="" data-aframe-inspector-original-camera=""></a-camera>
+      </a-entity>
+      
+      <!--Lamp Light-->
+      <a-entity id="light-lamp" light="color: #f0d551; decay: 2; distance: 4; intensity: 2; type: point" position="-0.96 1.920 0"></a-entity>
+      <a-entity id="light-lamp-spot" light="color: #f0d551; intensity: 2; type: spot; angle: 45; penumbra: 0.3" position="-0.96 1.85126 0" rotation="-90 0 0"></a-entity>
+      
+    </a-scene>
+  </body>
+</html>
