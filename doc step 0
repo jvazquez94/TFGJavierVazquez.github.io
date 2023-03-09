@@ -274,7 +274,9 @@ ensancha el cursor un poco para dar ese feedback visual del que hablamos, ya que
 En la animación del cursor le añade el atributo de scale, to="3 3 3" dur, begin="cursor-fusing" y fill="backwar" que con esto ultimo lo que hace es aplicar la acción
 O evento click sin necesidad de hacerlo.
 
-
+-->Corrección el atributo fuse a cursor y fuseTimeout es el que hace el click sin necesidad de aplicar manualmente.
+   El atributo begin de la animation ya no existe en su lugar se usa startEvents.
+   El atributo fill de la animation hace ya no existe
 
  
 
