@@ -71,20 +71,21 @@ a continuación cursor como su hijo.
    raycaster="objects: .clickable" (o lo que quieras) y luego en los objetos añadir la clase con esa etiqueta. Los objetos que no tengan esa etiqueta no produce
    animación.
    
-   Imagenes sobre los eventos y propiedades del cursor*
+   Imagenes sobre los eventos y propiedades del cursor
+ 
    --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **STEP PREV.** 
+ 
+ **STEP PREV.** 
   
   Por problemas deje un mes esto, retomamos con curso de youtube para WebVR con aframe, ya que me estaba liando yo solo con la documentación que hay en la página oficial.
   
-  Project name in glitch: brawny-agate-dormouse
+  *Project name in glitch: tfg-project*
   
   1. Basic Primitives And HTML Attributes (A-Frame Tutorial - WebVR)  
   Lo primero que inserta en la escena es una caja, hay que tener en cuenta que de manera por defecto es decir: <a-box></..> no aparecería nada en el browser ya que
   la camara está en primera persona por defecto en la misma posición de la caja. 
   Si accedemos al menú de visualizar en 3D podemos analizar la escena y movernos por ella, comprobando que la caja está ahí. Para moverte por la escena 3D: Si clicamos
-  y mantenemos el mouse hacia abajo veremos la caja justo al lado (buscarlo si simplemente hacia abajo no está). Para alejarnos de la caja y cambiar la posicion, pulsamos W,A,S,D mientras mantenemos el click con el ratón
-  para movernos en la escena.
+  y mantenemos el mouse hacia abajo veremos la caja justo al lado (buscarlo si simplemente hacia abajo no está). Para alejarnos de la caja y cambiar la posicion,       pulsamos W,A,S,D mientras mantenemos el click con el ratón para movernos en la escena.
   Si salimos en la vista web ya se puede apreciar la caja. Recuerda que la caja es un elemento por defecto pero todos los primitivos acaban siendo entidades.
   Atributos: color, width, height, deepth
   Recuerda que las distancias en Aframe están en metros, dato a tener en cuenta al estar en escala para diseñar las escenas ya que el punto de vista es de una persona.
@@ -92,7 +93,7 @@ a continuación cursor como su hijo.
   para ver el resto de las caras y no este a la mitad el útlimo atributo: side="double".
   
   
-  2.Camera Primitive.
+  2. Camera Primitive.
   El elemento camara por defecto se posicion en el modo VR en el 0 0 0 y en el modo escritorio 0 1 0. Cuando se añade un elemento con una imagen se pone en la etiqueta
   <a-assets> <img> la imagen precargada para luego añadirla a un objeto. En Glitch para precargar una imagen desde los assets se copia el link que te ofrece y se 
   pega en el src.
@@ -112,11 +113,11 @@ a continuación cursor como su hijo.
  Si se cambia la posición del padre la del hijo cambia.
  
  
- 4.Rotation and Relative Rotation.
+ 4. Rotation and Relative Rotation.
  Es igual que la posicion pero con el atributo de rotation.
  
  
- 5.Scale, Relative Scale, and Reflection.
+ 5. Scale, Relative Scale, and Reflection.
  Podemos escalarar los objetos de la escena con el atributo scale="x x x".
  Hay que tener cuidado cuando al elemento se le ha aplicado previamente otra transformacón porque los ejes en este caso se escalan sobre lo anteriormente
  aplicado. En el ejemplo del video, el eje y tiene aplicada antes una rotación (sobre el cilindro) de 90 grados, entonces cuando aplicamos el escalado a dos,
@@ -128,7 +129,7 @@ a continuación cursor como su hijo.
  Cuando se usa numeros negativos en las transformaciones es lo que se llama reflection.
  
  
- 6.Image Textures and Materials.
+ 6. Image Textures and Materials.
  Usame el Assets Manage System para precargar las imagenes de por ejemplo materiales y que no consuma tanta memoria. Se añade poniendo el elemento <a-assets>
  y dentro <img id.. src...> sin cerrar la etiqueta de img.
  Para repetir la textura en el eje X Y se usa el atributo repeat= "1 1" es el default para ambos ejes. 
@@ -138,15 +139,14 @@ a continuación cursor como su hijo.
  de la luz concuerde.
  Para controlar el reflejo de la luz en la textura usamos el atributo roughness="0.5" por defecto.
  Tambien los atributos los podemos asignar no en la etiqueta del primitivo, si no en un atributo llamado material="color: blue; position:"x x x"; ..
- Cuando además de esto usamos el atributo scale y el eje X lo ponemos a -1 tenemos un efecto muy particular que consiste en que las caras segun vamos rotando se vuelven
- transaparentes (efecto sims) -> creo que lo ha quitado porque a mi no se me aplica.
+ Cuando además de esto usamos el atributo scale y el eje X lo ponemos a -1 tenemos un efecto muy particular que consiste en que las caras segun vamos rotando se vuelven transaparentes (efecto sims) -> creo que lo ha quitado porque a mi no se me aplica.
  Se puede aplicar el atributo roughness a los maeriales por defecto sin definir una textura como imagen.
  El atributo shader tambien es otro efecto sobre el texturizado y puede ser standar (que es con brillo) o flat (Que es opaco sin brillo).
  Para aplicar transparencia al objeto se usa el atributo opacity="0.5".
  Ojo con los atributos como position que no pueden ir dentro de material.
  
  
- 7.Image and Curve Image primitives.
+ 7. Image and Curve Image primitives.
  Hay que tener en cuenta la escala de las imaagenes para que a la hora de escalar en la escena se haga de forma correcta y no se distorsione por un mal concepto de 
  las proporciones. Para ello nos ofrece una fórmula para pasar a milimetros las longitud y ancho de al imagen para añadir a nuestra escena.
  La fórmula es: Ancho de imagen (m) = ancho (m) / IMG ancho (px) * IMG altura (px) que es: 1 metro(que es la unidad de medida que se usa en aframe) entre 1024 pixeles
@@ -158,26 +158,22 @@ a continuación cursor como su hijo.
  Para calcular el arco usa la pagina dejada en favs: handymath.com y asi establecer los parametros correctos. La anchura se calcula como en una imagen normal (paso anterior)
  
  8.Breaking primitives down.
+  
  -------------------------------------------------------------------------
  *27-02-2023*
  
- 9.Ground.
+ 9. Ground.
  Uso de imagenes para texturizado del suelo con componentes ya usados como la normal, imagenes, repea, rotation, scale, etc.
- Para este video no le ha hecho falta modificar el roughness para el contraste del brillo con el material ya que simplemente con la normal-nmap y normal-texture-repeat,
- le ha conseguido dar el toque necesario para hacerlo realista.
+ Para este video no le ha hecho falta modificar el roughness para el contraste del brillo con el material ya que simplemente con la normal-nmap y normal-texture-repeat, le ha conseguido dar el toque necesario para hacerlo realista.
  Recuerdo con no aadir dentro de la etiqueta a-assets los elementos de la escena ya que si no no se van a visualizar.
  
  
  10. Sky and 360 grades.
- El tipo de primitivs a-sky es una circunferenciad e radio por defecto 10000 metros por eso nos da la sensacion de fondo e cielo. Se le puede cambiar el radio con el parametro
- radius para ver como abarca la esfera del componente. Tambien se le puede hacer doble para que cubra todo el rango del espacio y cubir la esfera al completo duplicando ambas
- mitades de la esfera,una en el otro semicirculo.
- Para poner el suelo acorde con el infinito del cielo recordar cambiar los parametros de repeat y normal-textuyre-repeat para que no este todo borroso (generalmente la mitad del valor
- superficie agrandada.
+ El tipo de primitivs a-sky es una circunferenciad e radio por defecto 10000 metros por eso nos da la sensacion de fondo e cielo. Se le puede cambiar el radio con el parametro radius para ver como abarca la esfera del componente. Tambien se le puede hacer doble para que cubra todo el rango del espacio y cubir la esfera al completo duplicando ambas mitades de la esfera,una en el otro semicirculo.
+ Para poner el suelo acorde con el infinito del cielo recordar cambiar los parametros de repeat y normal-textuyre-repeat para que no este todo borroso (generalmente la mitad del valor superficie agrandada.
  
 Usar buenas texturas para que no quede raro.
-Para que no nos afecte por ejemplo en un texturizado de suelo el sombreado de la luz de la escena porque queremos que quede con un toque cartoon, le aplicamos al componente del suelo
-shader:flat para que no refleje esa luz.
+Para que no nos afecte por ejemplo en un texturizado de suelo el sombreado de la luz de la escena porque queremos que quede con un toque cartoon, le aplicamos al componente del suelo shader:flat para que no refleje esa luz.
 Podemos aplicar imagenes 360 para dar mnas realismo a la escena, página: texturify.com
 
 
@@ -214,11 +210,10 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  de la accion sean sobre el padre.
  -------------------------------------------------------------------------------
   
-* 02-03-2023*
+*02-03-2023*
   
  Usamos el atributo easing con ease-out para que la acción se produzca con una deceleración al final.
- También podemos usar el factor de scale para escalar el objeto como una acción; to y pones la escala a la que quieres que cambie. Se puede aplicar efecto rebote en el easing
- el nombre de la etiqueta del atributo es parecidad a la de deceleración: ease-out-bounce.
+ También podemos usar el factor de scale para escalar el objeto como una acción; to y pones la escala a la que quieres que cambie. Se puede aplicar efecto rebote en el easing el nombre de la etiqueta del atributo es parecidad a la de deceleración: ease-out-bounce.
  Tambien se puede animar el color de un componente. El nombre del atributo es material.color para aplicar el cambio de color from x to x.
  También se puede animar la opacidad con el nombre del atributo material.opacity., tambien se puede con opacity directamente.
  Para que un componente tenga una accion con respecto a un punto de referencia como se menciona en la leccion anterior hay que meter la componente en una
@@ -228,9 +223,9 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  Cuidado con la guia de colores ya que en la etiqueta de animacion de from a to solo coge # con el codigo hexadecimal.
  -------------------------------------------------------------------------------
   
-* 06-03-2023*
+*06-03-2023*
   
- Luces y sombras.
+ 15. Luces y sombras.
  Para establecer una luz solo hay que introducir un elemento a-entity y poner la componente light="" dentro podemos añadir diferentes atributos. El primero que
  se establece es el type para el tipo de luz, ambient, point, spot.
  Para establecer sombras en la escena primero podemos activar o desactivar con el atributo shadow="enabled: true" en la etiqueta scene. Despues tenemos que definir
@@ -242,7 +237,7 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
   
  *07-03-2023*
   
-  15.  Inspector.
+  16.  Inspector.
  Para lanzar el inspector control + alt + I
  Con el control del mouse puedes moverte por la vista del inspector.
  Se puede ajustar por ejemplo un luz desde el inspector poniendola donde quieres, ajustando colo, intensidad, distancia. Y una vez hecho eso le damos al boton
@@ -250,7 +245,7 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  Glitch y tienes que volver a hacerlo.
  Para cambiar la cantidad de espacio que abarca una luz spot se cambia el angle de la entidad.
  
- 16. Cursor Primitivo y cursor.
+ 17. Cursor Primitivo y cursor.
  Se introduce el componente del mouse relacionado con los eventos del framework, ya sean clickEventmouseEnter, Leave....
  El a-cursor se introduce como hijo dentro de un elemento camera (no es necesario) apareciendo en la escena un circulito por defecto con los bordes negros. 
  Podemos añadir dentro del cursor en el atributo rayCaster para que enseñe la linea de movimiento del haz.
@@ -258,10 +253,11 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  podemos añadir dentro un a-entity y despues ponerle el atributo cursor, luego añadimos los que necesitemos para modificarlo: position, geometry y material para añadirlo.
  Tambien podemos en el material cambiar el color dependiendo del fondo que tengamos por si se hace dificil distinguirlo.
  
- 17. Event Set Component.
+ 18. Event Set Component.
  Recomienda insertar el script source de uno de los creadores de aframe: ngokevin -> Github.
  Se ha movido el repositorio que tenia a https://github.com/amitwaghmare/aframe-event-set-component
- Hay que añadir la linea de script que añade los eventos:   <script src="https://rawgit.com/ngokevin/aframe-event-set-component/master/dist/aframe-event-set-component.min.js"></script>
+ Hay que añadir la linea de script que añade los eventos: 
+  <script src="https://rawgit.com/ngokevin/aframe-event-set-component/master/dist/aframe-event-set-component.min.js"></script>
 o instalar via NPM (Node Package Management para gestionar paquetes y librerias de JavaScript)
 
  -------------------------------------------------------------------------------------------------
@@ -278,14 +274,14 @@ o instalar via NPM (Node Package Management para gestionar paquetes y librerias 
   
 *09-03-2023*
   
-Gaze-Based Interactions.
+19. Gaze-Based Interactions.
 Basicamente te da un ejemplo parra dar feedback visual cuando la gente usa el movil o las gafas, en este caso en el que tenemos las cajas con los respectivos eventos
 añade que cada vez que el cursor señala una caja usa fuse: true y fuseTimeOut: 1500 en el cursor, para que cada vez que se posicione sobre una añade una animation que 
 ensancha el cursor un poco para dar ese feedback visual del que hablamos, ya que no todos los usuarios usaran la app web.
 En la animación del cursor le añade el atributo de scale, to="3 3 3" dur, begin="cursor-fusing" y fill="backwar" que con esto ultimo lo que hace es aplicar la acción
 O evento click sin necesidad de hacerlo.
 
--->Corrección el atributo fuse a cursor y fuseTimeout es el que hace el click sin necesidad de aplicar manualmente.
+-->**Corrección** el atributo fuse a cursor y fuseTimeout es el que hace el click sin necesidad de aplicar manualmente.
    El atributo begin de la animation ya no existe en su lugar se usa startEvents.
    El atributo fill de la animation hace ya no existe
 
