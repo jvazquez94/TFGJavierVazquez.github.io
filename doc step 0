@@ -265,7 +265,17 @@ o instalar via NPM (Node Package Management para gestionar paquetes y librerias 
  Tipos de _event: click, mouseenter, mouseleave, mousedown, mouseup, y fusing.
  
  
- 
+--------------------------------------------------------------------------------------------------- 
+09-03-2023
+Gaze-Based Interactions.
+Basicamente te da un ejemplo parra dar feedback visual cuando la gente usa el movil o las gafas, en este caso en el que tenemos las cajas con los respectivos eventos
+añade que cada vez que el cursor señala una caja usa fuse: true y fuseTimeOut: 1500 en el cursor, para que cada vez que se posicione sobre una añade una animation que 
+ensancha el cursor un poco para dar ese feedback visual del que hablamos, ya que no todos los usuarios usaran la app web.
+En la animación del cursor le añade el atributo de scale, to="3 3 3" dur, begin="cursor-fusing" y fill="backwar" que con esto ultimo lo que hace es aplicar la acción
+O evento click sin necesidad de hacerlo.
+
+
+
  
 
 
