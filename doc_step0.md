@@ -1,4 +1,4 @@
-STEP 0.
+**STEP 0.**
 
 Se tiene que añadir el script de aframe en el <head> para que se aplique todo el framework.
 <a-scene> sw añade en el <body> para poder cargar toda la config que va a requerir los componentes de aframe.
@@ -73,7 +73,7 @@ a continuación cursor como su hijo.
    
    Imagenes sobre los eventos y propiedades del cursor*
    --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  STEP PREV. 
+  **STEP PREV.** 
   
   Por problemas deje un mes esto, retomamos con curso de youtube para WebVR con aframe, ya que me estaba liando yo solo con la documentación que hay en la página oficial.
   
@@ -159,7 +159,7 @@ a continuación cursor como su hijo.
  
  8.Breaking primitives down.
  -------------------------------------------------------------------------
- 27-02-2023
+ *27-02-2023*
  
  9.Ground.
  Uso de imagenes para texturizado del suelo con componentes ya usados como la normal, imagenes, repea, rotation, scale, etc.
@@ -182,7 +182,7 @@ Podemos aplicar imagenes 360 para dar mnas realismo a la escena, página: textur
 
 
 ----------------------------------------------------------------------------------------
-28-02-2023
+*28-02-2023*
 
 13. Loading an Displaying 3D Models.
 La pagina que usa para descargar modelos gratis de 3D es: skechfab.com
@@ -194,7 +194,8 @@ textures dentro de la del proyecto y en glitch no deja crear carpetas en los ass
 o trasladar el puesto de trabajo en windows, ya que la virtual box de linux va muy lento.
 
 ----------------------------------------------------------------------------------------
-01-03-2023
+  
+*01-03-2023*
 
 14. Animating objects.
 Para animar un componente de la escena se usa el componente <a-animation> dentro del componente no de la etiqueta, es decir <a-box> </a-box> en lugar de <a-box <a-animation>.
@@ -212,7 +213,9 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  Se puede jugar con la relación padre e hijo metiendo la animacion dentro de un <a-entity> y despues una caja o cualquier componente para que los efectos
  de la accion sean sobre el padre.
  -------------------------------------------------------------------------------
- 02-03-2023
+  
+* 02-03-2023*
+  
  Usamos el atributo easing con ease-out para que la acción se produzca con una deceleración al final.
  También podemos usar el factor de scale para escalar el objeto como una acción; to y pones la escala a la que quieres que cambie. Se puede aplicar efecto rebote en el easing
  el nombre de la etiqueta del atributo es parecidad a la de deceleración: ease-out-bounce.
@@ -224,7 +227,9 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  el eje del padre se hace otra sobre ella.
  Cuidado con la guia de colores ya que en la etiqueta de animacion de from a to solo coge # con el codigo hexadecimal.
  -------------------------------------------------------------------------------
- 06-03-2023
+  
+* 06-03-2023*
+  
  Luces y sombras.
  Para establecer una luz solo hay que introducir un elemento a-entity y poner la componente light="" dentro podemos añadir diferentes atributos. El primero que
  se establece es el type para el tipo de luz, ambient, point, spot.
@@ -234,8 +239,10 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  Tambien se puede establecer con animaciones de movimiento, por ejemplo, para que la luz siga al objeto, esto se consigue en la luz con el atributo target y el id 
  del elemento que queremos que enfoque conel tipo de luz spot.
  ----------------------------------------------------------------------------------
- 07-03-2023
-15.  Inspector.
+  
+ *07-03-2023*
+  
+  15.  Inspector.
  Para lanzar el inspector control + alt + I
  Con el control del mouse puedes moverte por la vista del inspector.
  Se puede ajustar por ejemplo un luz desde el inspector poniendola donde quieres, ajustando colo, intensidad, distancia. Y una vez hecho eso le damos al boton
@@ -258,7 +265,9 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
 o instalar via NPM (Node Package Management para gestionar paquetes y librerias de JavaScript)
 
  -------------------------------------------------------------------------------------------------
- 08-03-2023
+  
+ *08-03-2023*
+  
  src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js" -> script a usar para los events set ya que el anterior NO funcionaba.
  Para usar los eventos tenemos que establecer en el objeto que se desea producir el evento el siguiente formato:
  event-set__[nombre_evento] = "_event: mouseenter; material.color: ...", en el nombre evento no se pueden usar mayusculas pero si '_'.
@@ -266,7 +275,9 @@ o instalar via NPM (Node Package Management para gestionar paquetes y librerias 
  
  
 --------------------------------------------------------------------------------------------------- 
-09-03-2023
+  
+*09-03-2023*
+  
 Gaze-Based Interactions.
 Basicamente te da un ejemplo parra dar feedback visual cuando la gente usa el movil o las gafas, en este caso en el que tenemos las cajas con los respectivos eventos
 añade que cada vez que el cursor señala una caja usa fuse: true y fuseTimeOut: 1500 en el cursor, para que cada vez que se posicione sobre una añade una animation que 
