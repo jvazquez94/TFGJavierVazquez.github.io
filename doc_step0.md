@@ -279,6 +279,7 @@ O evento click sin necesidad de hacerlo.
    El atributo fill de la animation hace ya no existe
 
  
+![image](https://user-images.githubusercontent.com/36034121/224068798-4466ddc3-79c8-48b2-a88c-bba1732fcee7.png)
 
 
  
