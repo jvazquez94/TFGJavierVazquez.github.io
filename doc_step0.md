@@ -213,7 +213,7 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
 *02-03-2023*
   
  Usamos el atributo easing con ease-out para que la acción se produzca con una deceleración al final.
- También podemos usar el factor de scale para escalar el objeto como una acción; to y pones la escala a la que quieres que cambie. Se puede aplicar efecto rebote en el easing el nombre de la etiqueta del atributo es parecidad a la de deceleración: ease-out-bounce.
+ También podemos usar el factor de scale para escalar el objeto como una acción; to y pones la escala a la que quieres que cambie. Se puede aplicar efecto rebote en el  easing el nombre de la etiqueta del atributo es parecidad a la de deceleración: ease-out-bounce.
  Tambien se puede animar el color de un componente. El nombre del atributo es material.color para aplicar el cambio de color from x to x.
  También se puede animar la opacidad con el nombre del atributo material.opacity., tambien se puede con opacity directamente.
  Para que un componente tenga una accion con respecto a un punto de referencia como se menciona en la leccion anterior hay que meter la componente en una
@@ -221,6 +221,7 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  como por ejemplo la de rotar, se haga sobre el eje del padre si aplicamos en la etiqueta de el, luego si aplicamos en la etiqueta del hijo, ademas de hacer sobre
  el eje del padre se hace otra sobre ella.
  Cuidado con la guia de colores ya que en la etiqueta de animacion de from a to solo coge # con el codigo hexadecimal.
+  
  -------------------------------------------------------------------------------
   
 *06-03-2023*
@@ -233,6 +234,7 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  sombra, para ello en el atributo shadow="receive: true" o "cast: true".
  Tambien se puede establecer con animaciones de movimiento, por ejemplo, para que la luz siga al objeto, esto se consigue en la luz con el atributo target y el id 
  del elemento que queremos que enfoque conel tipo de luz spot.
+  
  ----------------------------------------------------------------------------------
   
  *07-03-2023*
