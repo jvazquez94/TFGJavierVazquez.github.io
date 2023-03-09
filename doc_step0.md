@@ -1,4 +1,4 @@
-**STEP 0.**
+# **STEP 0.**
 
 Se tiene que añadir el script de aframe en el <head> para que se aplique todo el framework.
 <a-scene> sw añade en el <body> para poder cargar toda la config que va a requerir los componentes de aframe.
