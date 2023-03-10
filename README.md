@@ -1,6 +1,5 @@
 # TFG
 
-### Javier Vázquez Moreno 
 
 Proyecto sobre control de drones en webVR con Aframe; en desarrollo en la plataforma de Glitch, directorio de trabajo: https://glitch.com/edit/#!/tfg-project
 
@@ -10,5 +9,5 @@ Proyecto sobre control de drones en webVR con Aframe; en desarrollo en la plataf
 
 --------------------------------------------------------------------------
 
-#### *Alumno en grado en Tecnologías de la Telecomunicación.*
-#### *Universidad Rey Juan Carlos de Madrid.* 
+#### *Javier Vázquez Moreno, alumno en grado en Tecnologías de la Telecomunicación.*
+##### *Universidad Rey Juan Carlos de Madrid.* 
