@@ -9,5 +9,5 @@ Proyecto sobre control de drones en webVR con Aframe; en desarrollo en la plataf
 
 --------------------------------------------------------------------------
 
-#### *Javier Vázquez Moreno, alumno en grado en Tecnologías de la Telecomunicación.*
+#### *Javier Vázquez Moreno, alumno de grado en Tecnologías de la Telecomunicación.*
 ##### *Universidad Rey Juan Carlos de Madrid.* 
