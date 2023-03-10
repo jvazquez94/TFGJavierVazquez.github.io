@@ -292,7 +292,19 @@ O evento click sin necesidad de hacerlo.
 
  
 ![image](https://user-images.githubusercontent.com/36034121/224068798-4466ddc3-79c8-48b2-a88c-bba1732fcee7.png)
+  
+  ----------------------------------------------------------------------------------------------------
+  
+  *10-03-2023*
 
+  La manera que he descubierto de que se reinicie la animacion de fusing es muy diferente al del video debido a nuevas releases del framework.
+  Para empezar, no se por que porque en la docuoficial de aframe el atributo startEvents de una animacion deberia reiniciar la animacion de manera automatica,
+  pero no lo hace, entonces la solucion efectiva que he hecho es añadir otra animacion para cuando salga de un componente deje de hacer fusing.
+  Tambien he usado el evento mouseenter y mouseleave ya que cursor-fusing tampoco lo estaba agarrando bien.
+  
+  20. Selective Intersections.
+  
+  
 
  
  
