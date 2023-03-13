@@ -305,8 +305,9 @@ O evento click sin necesidad de hacerlo.
   
   ------------------------------------------------------------------------------------------------
   
-  *20. Selective Intersections.*
+  *13-03-2023*
   
+  20. Selective Intersections.  
   Para usar la intersección selectiva del cursor tenemos que aplicar elelemento raycaster y su objects: .clickable.
   De esta forma añadiendo al elemento en cuestion que queremos seleccionar la caracteristica class=" clickable" estamos como checkeando el elemento para el raycaster.
    
