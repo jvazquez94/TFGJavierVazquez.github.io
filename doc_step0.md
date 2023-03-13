@@ -302,7 +302,14 @@ O evento click sin necesidad de hacerlo.
   pero no lo hace, entonces la solucion efectiva que he hecho es añadir otra animacion para cuando salga de un componente deje de hacer fusing.
   Tambien he usado el evento mouseenter y mouseleave ya que cursor-fusing tampoco lo estaba agarrando bien.
   
-  20. Selective Intersections.
+  
+  ------------------------------------------------------------------------------------------------
+  
+  *20. Selective Intersections.*
+  
+  Para usar la intersección selectiva del cursor tenemos que aplicar elelemento raycaster y su objects: .clickable.
+  De esta forma añadiendo al elemento en cuestion que queremos seleccionar la caracteristica class=" clickable" estamos como checkeando el elemento para el raycaster.
+   
   
   
 
