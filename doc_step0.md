@@ -298,7 +298,7 @@ O evento click sin necesidad de hacerlo.
   *10-03-2023*
 
   La manera que he descubierto de que se reinicie la animacion de fusing es muy diferente al del video debido a nuevas releases del framework.
-  Para empezar, no se por que porque en la docuoficial de aframe el atributo startEvents de una animacion deberia reiniciar la animacion de manera automatica,
+  Para empezar, no se por que porque en la docu oficial de aframe el atributo startEvents de una animacion deberia reiniciar la animacion de manera automatica,
   pero no lo hace, entonces la solucion efectiva que he hecho es añadir otra animacion para cuando salga de un componente deje de hacer fusing.
   Tambien he usado el evento mouseenter y mouseleave ya que cursor-fusing tampoco lo estaba agarrando bien.
   
@@ -311,9 +311,20 @@ O evento click sin necesidad de hacerlo.
   Para usar la intersección selectiva del cursor tenemos que aplicar elelemento raycaster y su objects: .clickable.
   De esta forma añadiendo al elemento en cuestion que queremos seleccionar la caracteristica class=" clickable" estamos como checkeando el elemento para el raycaster.
    
+  ------------------------------------------------------------------------------------------------------------
   
+  *14-03-2023*
   
-
+  ->Selective Intersection.
+  Entonces el consejo que da para usar y desusar un elemento como estabamos haciendo con estas caracteristicas es añadir eventos en las cajas respectivas para
+  que en los respectivos targets quite la caracteristica clickable y lo añada a la otra cada vez que se pulse una de las dos.
+  Entonces lo unico que añadiriamos a cada uno de los elementos seria:
+  
+  event-set__clearclass="_event: click; class: not-clickable"
+  event-set__tarclass="_event: click; _target: #[tar_box]; class: clickable"
+  
+  De esta manera todos los elementos tendrian implementado los eventos que les quita la clase clickable y se la añade al destino.
+  
  
  
  
