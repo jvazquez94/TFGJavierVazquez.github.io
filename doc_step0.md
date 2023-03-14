@@ -319,10 +319,10 @@ O evento click sin necesidad de hacerlo.
   Entonces el consejo que da para usar y desusar un elemento como estabamos haciendo con estas caracteristicas es añadir eventos en las cajas respectivas para
   que en los respectivos targets quite la caracteristica clickable y lo añada a la otra cada vez que se pulse una de las dos.
   Entonces lo unico que añadiriamos a cada uno de los elementos seria:
-  
- <a-box ...
-  event-set__clearclass="_event: click; class: not-clickable"
-  event-set__tarclass="_event: click; _target: #[tar_box]; class: clickable"></a-box>
+ <!--Box-->
+  <a-box ...
+   event-set__clearclass="_event: click; class: not-clickable"
+   event-set__tarclass="_event: click; _target: #[tar_box]; class: clickable"></a-box>
   
   De esta manera todos los elementos tendrian implementado los eventos que les quita la clase clickable y se la añade al destino.
   
