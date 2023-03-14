@@ -320,7 +320,6 @@ O evento click sin necesidad de hacerlo.
   que en los respectivos targets quite la caracteristica clickable y lo añada a la otra cada vez que se pulse una de las dos.
   Entonces lo unico que añadiriamos a cada uno de los elementos seria:
   
- <!--Box-->
    <a-box ...
      event-set__clearclass="_event: click; class: not-clickable"
      event-set__tarclass="_event: click; _target: #[tar_box]; class: clickable">
