@@ -199,12 +199,13 @@ Si por ejemplo le añades, attribute = "rotation" es la accion que va a realizar
 que le indiques en to. Si le añades el atributo repeat="2", por ejemplo, repetira la accion dos veces (a parte de la primera al recargar la pagina.
 X -> correcion, de esta manera no parece funcionar (obsoleto??):
   
+  ```html
  <!-- Caja -->
       <a-box color="#AA0000"
              position="0 0.5 0"
              animation="property: rotation; to: 0 360 0; loop: true; dur: 1000;">
       </a-box>
-  
+  ```
       
  La dur esta mas referido a cuanto tarda en hacer el loop.
  El atributo easing esta para hacer lineal o no el loop, es decir, para cuando este empezando/terminando el loop se ralentice o vaya mas rapido o sea lineal.
