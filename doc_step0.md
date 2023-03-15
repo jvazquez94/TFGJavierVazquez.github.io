@@ -345,6 +345,8 @@ O evento click sin necesidad de hacerlo.
   ```html
    <a-entity progressive-controls></a-entity>
   ```
+  Esta linea nos ayuda a implementar controladores para que trabajen correctamente en cualquier plataforma (web, oculus, mobile, etc).
+  
   Ahora añadimos varias cajas en negro y les asignamos eventos para pulsarlas.
   Esta añadiendo la caracteristica hoverable, ya que usa unos eventos parecidos a mouseenter y mouseleave pero con hover-start hover-end, y la aplica a 3 botones y
   una pantalla para hacer cambiar de color a la pantalla.
