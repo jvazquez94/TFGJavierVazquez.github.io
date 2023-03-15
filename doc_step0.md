@@ -335,8 +335,19 @@ O evento click sin necesidad de hacerlo.
   *15-03-2023*
   
   21. Controller-Based Interactions.
+  Introduce el uso de las super hands, cereado pro William Murphy con su repositorio de github:  https://github.com/c-frame/aframe-super-hands-component
   
- 
+  Para instalar el componente nos sirve con adjuntar esta línea de codigo en la cabecera:
+  
+  <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+  
+  Ahora a traves de un entity le asignamos el atributo progressive-control:
+  ```html
+   <a-entity progressive-controls></a-entity>
+  ```
+  Ahora añadimos varias cajas en negro y les asignamos eventos para pulsarlas.
+  Esta añadiendo la caracteristica hoverable, ya que usa unos eventos parecidos a mouseenter y mouseleave pero con hover-start hover-end, y la aplica a 3 botones y
+  una pantalla para hacer cambiar de color a la pantalla.
  
  
  
