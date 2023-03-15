@@ -334,9 +334,9 @@ O evento click sin necesidad de hacerlo.
   
   *15-03-2023*
   
-  **21. Controller-Based Interactions.\n**
-  Introduce el uso de las super hands, cereado pro William Murphy con su repositorio de github:  https://github.com/c-frame/aframe-super-hands-component
+  **21. Controller-Based Interactions.**
   
+  Introduce el uso de las super hands, cereado pro William Murphy con su repositorio de github:  https://github.com/c-frame/aframe-super-hands-component  
   Para instalar el componente nos sirve con adjuntar esta línea de codigo en la cabecera:
   ```html
   <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
