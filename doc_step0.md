@@ -348,6 +348,9 @@ O evento click sin necesidad de hacerlo.
   Ahora añadimos varias cajas en negro y les asignamos eventos para pulsarlas.
   Esta añadiendo la caracteristica hoverable, ya que usa unos eventos parecidos a mouseenter y mouseleave pero con hover-start hover-end, y la aplica a 3 botones y
   una pantalla para hacer cambiar de color a la pantalla.
+  Añade un elemento mixin que aparece en la pagina de github de William Murphy (como un cursor) y luego lo unico que hace es añadir la clase UIButton a los botones para que la pantalla solo sea clickable para esa clase y asi hacer que los usuarios solo puedan pulsar esos botones y no reinician la pantalla, dando esos privilegios
+  a otros elementos.
+  Parece como una extension del cursor con mas elementos.
  
  
  
