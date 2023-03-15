@@ -337,7 +337,7 @@ O evento click sin necesidad de hacerlo.
   **21. Controller-Based Interactions.**
   
   Introduce el uso de las super hands, cereado pro William Murphy con su repositorio de github:  https://github.com/c-frame/aframe-super-hands-component  
-  Para instalar el componente nos sirve con adjuntar esta línea de codigo en la cabecera:
+  Para instalar el componente nos sirve con adjuntar estas líneas de codigo en la cabecera:
   ```html
   <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
@@ -348,7 +348,7 @@ O evento click sin necesidad de hacerlo.
   ```
   Esta linea nos ayuda a implementar controladores para que trabajen correctamente en cualquier plataforma (web, oculus, mobile, etc). Debria aparecer un cursor por
   defecto en nuestra escena, pero no está sucediendo¿?
-  -> 
+  -> Creo que lo han quitado, ya que es como un cursor.
   
   Ahora añadimos varias cajas en negro y les asignamos eventos para pulsarlas.
   Esta añadiendo la caracteristica hoverable, ya que usa unos eventos parecidos a mouseenter y mouseleave pero con hover-start hover-end, y la aplica a 3 botones y
