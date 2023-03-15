@@ -340,16 +340,23 @@ O evento click sin necesidad de hacerlo.
   Para instalar el componente nos sirve con adjuntar esta línea de codigo en la cabecera:
   ```html
   <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
   ```  
   Ahora a traves de un entity le asignamos el atributo progressive-control:
   ```html
    <a-entity progressive-controls></a-entity>
   ```
-  Esta linea nos ayuda a implementar controladores para que trabajen correctamente en cualquier plataforma (web, oculus, mobile, etc).
+  Esta linea nos ayuda a implementar controladores para que trabajen correctamente en cualquier plataforma (web, oculus, mobile, etc). Debria aparecer un cursor por
+  defecto en nuestra escena, pero no está sucediendo¿?
+  -> 
   
   Ahora añadimos varias cajas en negro y les asignamos eventos para pulsarlas.
   Esta añadiendo la caracteristica hoverable, ya que usa unos eventos parecidos a mouseenter y mouseleave pero con hover-start hover-end, y la aplica a 3 botones y
   una pantalla para hacer cambiar de color a la pantalla.
+  ```html
+   
+  ```
+  
   Añade un elemento mixin que aparece en la pagina de github de William Murphy (como un cursor) y luego lo unico que hace es añadir la clase UIButton a los botones para que la pantalla solo sea clickable para esa clase y asi hacer que los usuarios solo puedan pulsar esos botones y no reinician la pantalla, dando esos privilegios
   a otros elementos.
   Parece como una extension del cursor con mas elementos.
