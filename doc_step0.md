@@ -338,9 +338,9 @@ O evento click sin necesidad de hacerlo.
   Introduce el uso de las super hands, cereado pro William Murphy con su repositorio de github:  https://github.com/c-frame/aframe-super-hands-component
   
   Para instalar el componente nos sirve con adjuntar esta línea de codigo en la cabecera:
-  
+  ```html
   <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
-  
+  ```  
   Ahora a traves de un entity le asignamos el atributo progressive-control:
   ```html
    <a-entity progressive-controls></a-entity>
