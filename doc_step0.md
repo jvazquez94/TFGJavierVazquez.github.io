@@ -361,6 +361,12 @@ O evento click sin necesidad de hacerlo.
   Añade un elemento mixin que aparece en la pagina de github de William Murphy (como un cursor) y luego lo unico que hace es añadir la clase UIButton a los botones para que la pantalla solo sea clickable para esa clase y asi hacer que los usuarios solo puedan pulsar esos botones y no reinician la pantalla, dando esos privilegios
   a otros elementos.
   Parece como una extension del cursor con mas elementos.
+
+  ------------------------------------------------------------------------------------------------------
+
+  *16-03-2023*
+
+  Esto es una prueba de actualizacion GIT desde Visual Studio
  
  
  
