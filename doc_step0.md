@@ -349,6 +349,7 @@ O evento click sin necesidad de hacerlo.
   Esta linea nos ayuda a implementar controladores para que trabajen correctamente en cualquier plataforma (web, oculus, mobile, etc). Debria aparecer un cursor por
   defecto en nuestra escena, pero no está sucediendo¿?
   -> Creo que lo han quitado, ya que es como un cursor.
+  Añadir que el cursor sea de tipo circle en vez de figuras geometricas completas puede dar feedback negativo a nivel usuario con las accioens mouseenter y mouseleave, generando movimientos raros y poco armonicos.
   
   Ahora añadimos varias cajas en negro y les asignamos eventos para pulsarlas.
   Esta añadiendo la caracteristica hoverable, ya que usa unos eventos parecidos a mouseenter y mouseleave pero con hover-start hover-end, y la aplica a 3 botones y
