@@ -368,6 +368,8 @@ O evento click sin necesidad de hacerlo.
 
   Esto es una prueba de actualizacion GIT desde Visual Studio
  
+  **22. Interaction Gestures.**
+
  
  
  
