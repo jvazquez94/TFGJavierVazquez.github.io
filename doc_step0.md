@@ -371,6 +371,10 @@ O evento click sin necesidad de hacerlo.
   **22. Interaction Gestures.**
   Uso del componente superhands junto con event-set para la reaccion y control de componentes de la escena.
 
+  Presentamos el mismo problema que en el anterior, y es que la entitty de los superhands de progressive-controls esta desactualizada y ya no se usa, por lo que toca labor de investigación
+  para ver como usar las superhands actualmente.
+  Usa los elementos qeu si aperecen en la pagina de superhands como son los eventos grab-end y grab-start y los atributos clickable, grabbable y droppable para arrastre y trigger de choque de elementos
+  sin usar fisicas.
 
  
  
