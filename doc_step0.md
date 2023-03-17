@@ -369,6 +369,8 @@ O evento click sin necesidad de hacerlo.
   Esto es una prueba de actualizacion GIT desde Visual Studio
  
   **22. Interaction Gestures.**
+  Uso del componente superhands junto con event-set para la reaccion y control de componentes de la escena.
+
 
  
  
