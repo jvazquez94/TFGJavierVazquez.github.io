@@ -361,7 +361,7 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
     </a-scene>
   </body>
 </html>
-  ```
+```
   
  ----------------------------------------------------------------------------------
   
