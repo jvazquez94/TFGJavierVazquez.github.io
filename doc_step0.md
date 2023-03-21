@@ -231,6 +231,7 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
 *06-03-2023*
   
  15. Luces y sombras.
+  
  Para establecer una luz solo hay que introducir un elemento a-entity y poner la componente light="" dentro podemos añadir diferentes atributos. El primero que
  se establece es el type para el tipo de luz, ambient, point, spot.
  Para establecer sombras en la escena primero podemos activar o desactivar con el atributo shadow="enabled: true" en la etiqueta scene. Despues tenemos que definir
@@ -238,6 +239,129 @@ X -> correcion, de esta manera no parece funcionar (obsoleto??):
  sombra, para ello en el atributo shadow="receive: true" o "cast: true".
  Tambien se puede establecer con animaciones de movimiento, por ejemplo, para que la luz siga al objeto, esto se consigue en la luz con el atributo target y el id 
  del elemento que queremos que enfoque conel tipo de luz spot.
+  
+  ```html
+  <!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene shadow="enabled: true">
+      <!--Asset Management-->
+      <a-assets>
+        <img id="floor" src="assets/textures/Erba_01_TileMat_baseColor.jpeg">
+        <a-asset-item id="wall" src="assets/muros/scene.gltf"></a-asset-item>
+        
+      </a-assets>
+      
+      <a-entity position="0 -0.5 2.5">
+        <a-camera></a-camera>
+      </a-entity>
+      
+      <a-plane src="#floor"
+               rotation="-90 0 0"
+               scale="20 20 1"
+               repeat="10 10"
+               normal-texture-repeat="10 10"
+               shadow="receive: true">
+      </a-plane>
+      
+      <a-entity gltf-model="#wall"
+                position="0 0 0"
+                scale="0.6 0.6 0.6"
+                >
+      </a-entity>
+      
+      <a-entity light="type: ambient;
+                        intensity:0.1"></a-entity>
+
+      <!--<a-entity light="type: point;
+                        intensity: 0.9;
+                        distance: 50;
+                        castShadow: true  "
+                position="0 1 1.5"></a-entity>-->
+
+       <a-entity postion="0 100 0">
+            <a-box  position="1.2 0 0.5"
+                  rotation="0 -90 0"
+                  color="#3295D6"
+                  depth="0.1"
+                  weight="5"
+                  height="5"
+                  shadow="receive:true"></a-box>
+
+          <a-box  position="0 2 0.5"
+                  rotation="-90 0 90"
+                  color="#3295D6"
+                  depth="0.1"
+                  weight="2"
+                  height="4"
+                  shadow="receive:true"></a-box>
+
+
+
+          <a-box  position="-1.2 0 0.5"
+                  rotation="0 -90 0"
+                  color="#3295D6"
+                  depth="0.1"
+                  weight="5"
+                  height="5"
+                  shadow="receive:true"></a-box>
+
+          <a-box  position="0 0 0.2"
+                  rotation="0 0 0"
+                  color="#3295D6"
+                  depth="0.1"
+                  weight="10"
+                  height="5"
+                  scale="3 1 1"
+                  shadow="receive:true"></a-box>
+       </a-entity>           
+      
+
+      <a-entity light="type: point;
+                        intensity: 0.3;
+                        castShadow: true;
+                        distance: 50"
+                position="0 1.7 0.5">          
+      </a-entity>
+      <a-sphere radius="0.2"
+                    position="0 2 0.5"></a-sphere>
+
+      <a-sphere radius="0.2"
+      position="0 2 0.5"></a-sphere>
+
+      <a-box color="red"
+              position="0 0.5 0.7"
+              scale="0.5 0.5 0.5"
+              shadow="cast: true"></a-box>
+
+      <a-box  id="blue-box"
+              color="blue"
+              position="3 0.5 3"
+              scale="0.5 0.5 0.5"
+              shadow="cast: true"
+              animation="property: position;
+                          dir: alternate;
+                          to: 5 0.5 0.7;
+                          loop: true;
+                          easing: linear;
+                          dur: 4000"></a-box>
+
+      <a-entity light="type: spot;
+                        target: #blue-box;
+                        color: #C40070;
+                        angle: 20;
+                        castShadow: true;
+                        penumbra: 0.1"
+                position="2 3 2"
+      ></a-entity>
+
+    </a-scene>
+  </body>
+</html>
+  ```
   
  ----------------------------------------------------------------------------------
   
