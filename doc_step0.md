@@ -610,6 +610,14 @@ O evento click sin necesidad de hacerlo.
 
  ```
  
+  ---------------------------------------------------------------------------------
+  
+  *22-03-2023*
+  
+  Sigo investigando sobre el uso de superhands para hacer un hoverable, draggable, etc basicos en la escena sin el uso de fisicas. 
+  Por el momento he sacado en conclusión varios atributos nuevos que son útiles para poner en la escena.
+  Uno de ello es el elemento <a-mixin> dentro de los <a-asssets>. Ya que es gracias a la previa definicion de estos podemos reutilizar elementos. Es como definir un prefab de Unity.
+  
 
 
 
