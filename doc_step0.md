@@ -618,13 +618,22 @@ O evento click sin necesidad de hacerlo.
   Por el momento he sacado en conclusión varios atributos nuevos que son útiles para poner en la escena.
   Uno de ello es el elemento 
   ```html
-  <a-mixin> 
+  <a-assets>
+   <a-mixin id="red_box" material="color: #AA0000" 
+                      dynamic-body="shape: box"
+                      hoverable grabbale droppable stretchable
+                      shadow="cast: true" >
+   </a-mixin>
+  </a-assets>
+  
+  ...
+  
+  <a-box mixin="red_box" class="box" position=" x x x">
   ``` 
-  dentro de los 
-  ```html
-  <a-asssets> 
-  ```
-  Ya que es gracias a la previa definicion de estos podemos reutilizar elementos. Es como definir un prefab de Unity.
+  Ya que gracias a la previa definicion de estos podemos reutilizar elementos. Es como definir un prefab de Unity.
+  Luego se define el objeto como se indica anteriormente y podemos sacar varios objetos con las mismas caracteristicas.
+  Para que la seleccion de elementos del raycaster sea efectiva con el class, debe hacerse con el elemento instanciado, y no sobre el mixin.
+  
   
 
 
