@@ -634,6 +634,11 @@ O evento click sin necesidad de hacerlo.
   Luego se define el objeto como se indica anteriormente y podemos sacar varios objetos con las mismas caracteristicas.
   Para que la seleccion de elementos del raycaster sea efectiva con el class, debe hacerse con el elemento instanciado, y no sobre el mixin.
   
+  -------------------------------------------------------------------------------------------
+  
+  *23-03-2023*
+  
+  
   
 
 
