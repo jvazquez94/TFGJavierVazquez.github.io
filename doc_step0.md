@@ -638,7 +638,20 @@ O evento click sin necesidad de hacerlo.
   
   *23-03-2023*
   
-  
+  La funcionalidad de superhands que controla el movimiento segun la vista para los lados arriba y abajo es grabbable. Entonces, si se quiere conseguir una UX estetica y fluida lo mejor es aplicar esto: 
+  ```html
+  <a-mixin id="red_box" material="color: #AA0000"                      
+                     grabbable
+                     shadow="cast: true"
+                     cursor="fuse: true"
+                     dynamic-body="shape: box"
+                     event-set__grabon="_event: grab-start; material.opacity: 0.5; transparent: true"
+                     event-set__grabboff="_event: grab-end; material.opacity: 1; transparent: false">
+            </a-mixin>
+  ```
+  En este ejemplo lo que estamos haciendo es que cuando se agarre el elemento (en este caso un prefab de una caja) cada vez que se agarre con el cursor (si queremos que sea con el mouse tenemos que poner atributo capture-mouse y como rayOrigin del cursor el mouse) hacemos que la opacidad de la caja baje para generar esa sensacion de interacción. Para que la funcionalidad de grabbable sea efectiva hay que aplicar fisicas a la escena.
+  Para ello lo que tenemos que hacer es añadir la etiqueta phisycs en el elemento <a-scene> y en los respectivos elementos de la escena poner el atributo de dynamic-body para los elementos que van a moverse e interseccionar, y para los estaticos con los que se choca (como es el suelo) static-body.
+  Se le añade a la etiqueta dynamic-body="shape: box.." por ejemplo para hacer mas preciso esas fisicas indicandole la forma. 
   
 
 
