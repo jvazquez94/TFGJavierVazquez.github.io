@@ -1,25 +1,67 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-        <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
-        <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
-    </head>
+<head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.1.0/dist/aframe-physics-system.js"></script>
+    <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.1.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras/dist/aframe-physics-extras.min.js"></script>
+    <script>
 
-    <body>
-        <a-scene>
+    </script>
 
-            <a-entity progressive-controls></a-entity>
+</head>
 
-            <a-box id="red_box" color="#AA0000" position="-1.5 0 -7"></a-box>
+<body>
+    <a-scene phisycs>
+        <a-assets>
+            <a-mixin id="red_box" material="color: #AA0000"
+                     grabbable
+                     shadow="cast: true"
+                     cursor="fuse: true"
+                     dynamic-body="shape: box"
+                     event-set__grabon="_event: grab-start; material.opacity: 0.5; transparent: true"
+                     event-set__grabboff="_event: grab-end; material.opacity: 1; transparent: false">
+            </a-mixin>
+        </a-assets>
 
-            <a-box id="green_box" color="#00AA00" position="-1.5 2 -7"></a-box>
 
-            <a-box id="yellow_box" color="#FFAA00" position="1.5 2 -7"></a-box>
+        <!--Camera-->
+        <a-entity camera look-controls wasd-controls position="0 1 0">
+            <a-entity cursor position="0 0 -1"
+                      geometry="primitive: sphere; radius: 0.01"
+                      material="color: black; opacity: 0.6"
+                      raycaster="objects: .box"
+                      super-hands="colliderEvent: raycaster-intersection;
+                                   colliderEventProperty: els;
+                                   colliderEndEvent: raycaster-intersection-cleared;
+                                   colliderEndEventProperty: clearedEls;"
+                      static-body="shape: sphere; sphereRadius: 0.001"
+                      animation__fusing="property: scale; to: 2 2 2; dur: 600; startEvents: mouseenter ;easing:linear"
+                      animation__nofusing="property: scale; to: 1 1 1; dur:100 ; startEvents: mouseleave; easing:linear"></a-entity>
+        </a-entity>
 
-            <a-box id="blue_box" color="#00AAFF" position="1.5 0 -7"></a-box>
-        </a-scene>
-    </body>
 
-</html>
+        <!--sky-->
+        <a-sky color="#B0FDF7"></a-sky>
+
+        <!--floor-->
+        <a-box static-body depth="200" width="200" color="#724212" position="0 -1 0" shadow="receive: true; cast: true"></a-box>
+
+        <!--light-->
+        <a-entity light="type: ambient; intensity: 0.7"></a-entity>
+        <a-entity light="type: spot; _target: #red-box; castShadow: true; angle: 70; decay: -0.95; distance: 499.99; intensity: 2; penumbra: 0.08" id="light"
+                  position="0 2 -2"></a-entity>
+
+        <a-box mixin="red_box" class="box" position="-1.5 0 -7"></a-box>
+
+        <!--<a-box id="green_box" color="#00AA00" position="-1.5 2 -7"></a-box>
+
+        <a-box id="yellow_box" color="#FFAA00" position="1.5 2 -7"></a-box>
+
+        <a-box id="blue_box" color="#00AAFF" position="1.5 0 -7"></a-box>-->
+    </a-scene>
+</body>
+
+</html> 
