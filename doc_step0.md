@@ -663,6 +663,10 @@ O evento click sin necesidad de hacerlo.
   Como consejo para colisiones nos dice que podemos usar el mismo objeto y hacerlo invisible pero un poco mas grande en
   su escalado para las colisiones.
 
-
+---------------------------------------------------------------------------------------------------
+  *30-03-2023*
+  Investigando para la escena final controlando un dron, problematicas:
+  - controlar dron.
+  -proyectar camara de dron en pantalla -> pagina stackoverflow: https://stackoverflow.com/questions/44760526/a-frame-how-to-render-2nd-camera-to-canvas
 
 
