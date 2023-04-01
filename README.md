@@ -3,11 +3,11 @@
 
 Proyecto sobre control de drones en webVR con Aframe; en desarrollo en la plataforma de Glitch. Directorio de trabajo: https://glitch.com/edit/#!/tfg-project
 
-**Step prev ->** manejo de la herramienta con tutorial de Youtube (documentado).
+**Step prev ->** manejo de la herramienta con tutorial de Youtube 
 
-**Step 0 ->** Uso de handlers y raycaster con aframe. (En proceso)
+**Step 0 ->** Uso de handlers y raycaster con aframe. 
 
-**Step 1 ->** Empiece del proyecto, montaje básico para controlar un dron
+**Step 1 ->** Empiece del proyecto, montaje básico para controlar un dron; escena, dron y controladores.
 
 
 
