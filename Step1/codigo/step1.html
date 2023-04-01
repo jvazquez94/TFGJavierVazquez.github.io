@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.1.0/dist/aframe-physics-system.js"></script>
+        <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@^4.1.1/dist/aframe-event-set-component.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+            <!--Asset Management-->
+            <a-assets>
+                <a-mixin id="boton" scale="0.2 0.2 0.2" color="red"
+                         event-set__hoveron="_event: hover-start; material.opacity: 0.6; transparent: true"
+                         event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"></a-mixin>
+            </a-assets>
+
+            <!--Environment-->
+            <a-entity environment></a-entity>
+
+            <!--Camara-->
+            <a-entity camera look-controls wasd-controls
+                      position="0 1 0"
+                      capture-mouse raycaster cursor="rayOrigin: mouse"
+                      clickable hoverable
+                      superhands></a-entity>
+
+            <!--Dron-->
+            <a-entity position="0 0.5 -5"><a-box scale="0.5 0.5 0.5"></a-box></a-entity>
+
+            <!--Controles-->
+            <!--Palanca de movimiento
+            <a-cylinder position="0.25 0.25 -2" radius="0.1" height="0.5"></a-cylinder>
+                -->
+            <!--Botones arriba/abajo-->
+            <a-box id="boton_arriba" mixin="boton" position="-0.4 0 -2"
+                   color="yellow"></a-box>
+            <a-box id="boton_abajo" mixin="boton" position="-0.8 0 -2"
+                   color="yellow"></a-box>
+
+            <!--Botones izquierda derecha-->
+            <a-box id="boton_izq" mixin="boton" position="0 0 -2" color="red"></a-box>
+            <a-box id="boton_drch" mixin="boton" position="0.50 0 -2" color="red"></a-box>
+
+            <!--Botones delante/atrás-->
+            <a-box id="boton_atras" mixin="boton" position="0.25 0 -1.65" color="red"></a-box>
+            <a-box id="boton_delante" mixin="boton" position="0.25 0 -2.35" color="red"></a-box>
+        </a-scene>
+    </body>
+</html>

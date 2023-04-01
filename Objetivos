@@ -1,4 +1,4 @@
-Step 0.
+Step 0. Manejo del framework
 Probar el uso de manejadores para mover una caja, y funcionamiento del raycaster.
 Identificar problema. Probar dificultad de lo hecho, si se hace dificil, empezar con algo más sencillo como un cambio de color a una entidad. Si se hace fácil probar
 a ligar a ese manejador con objetos.
@@ -9,3 +9,17 @@ Página handler: https://www.npmjs.compackage/super-hands/v/2.1.0?activeTab=read
                 https://github.com/wmurphyrd/aframe-super-hands-component
                 
 Para la realización de cada documentación poner: capitulo - resultado - final - tecs usadas.
+
+Step 1. Montando la escena del dron.
+El objetivo del step 1 es montar un dron básico con mando de movimientos.
+Los pasos se dividiran en:
+1) Establecer el dron como una caja y los movimientos básicos del mando, subir, bajar, izq., derch., alante, atrás.
+
+2) Suavizar los movimientos del dron con aceleración.
+
+3)Añadir fuerzas en el movimiento del dron, implementar la palanca para que vaya en sincronia
+con el movimiento de ésta; ejecución y parecido al joystick de un mando de consola, cuánto más hacia
+adelante mas acelaración hacia el máximo.
+
+4) Como extra implementar objetos y diseños de la palanca y botones e implementación de las camaras
+que se puede implementar en el dron como canvas.
