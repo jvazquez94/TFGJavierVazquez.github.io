@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.1.0/dist/aframe-physics-system.js"></script>
+    <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.1.1/dist/aframe-event-set-component.min.js"></script>
+
+</head>
+<body>
+    <a-scene physics>
+        <!--Assets Management-->
+        <a-assets>
+            <a-mixin hoverable
+                     id="button" material="color: red" static-body scale="0.25 0.1 0.25"
+                     event-set__mouseon="_event: hover-start; material.opacity: 0.6; transparent: true"
+                     event-set__mouseoff="_event: hover-end; material.opacity: 1; transparent: false"></a-mixin>
+        </a-assets>
+
+        <!--Environment-->
+        <a-entity static-body environment></a-entity>
+
+        <!--Cameras-->
+        <a-entity id="main_camera" active="true" position="0 1 3"
+                  camera look-controls wasd-controls
+                  capture-mousse raycaster cursor="rayOrigin: mouse"
+                  body="type: static; shape: sphere; sphereRadius: 0.001"
+                  super-hands="colliderEvent: raycaster-intersection;
+                             colliderEventProperty: els;
+                             colliderEndEvent:raycaster-intersection-cleared;
+                             colliderEndEventProperty: clearedEls;"></a-entity>
+
+        <a-entity id="dron_camera"></a-entity>
+
+        <!--Dron-->
+        <a-entity position="0 0.25 -2">
+            <a-box id="dron" color="blue" scale="0.5 0.5 0.5"></a-box>
+        </a-entity>
+
+        <!--screen
+        <a-entity id="screen">
+          <a-plane material="transparent: true" position="0 0 -3" color="white" rotation="0 0 0" width="10" height="10"></a-plane>
+        </a-entity>-->
+        <!--Buttons Controllers-->
+        <a-box mixin="button" id="but_front" position="0 0 0.5"
+               event-set__front="_event: click; _target: #dron; material.color: yellow"></a-box>
+        <a-box mixin="button" id="but_right" position="0.5 0 0.75"
+               event-set__right="_event: click; _target: #dron; material.color: yellow"></a-box>
+        <a-box mixin="button" id="but_left" position="-0.5 0 0.75"
+               event-set__left="_event: click; _target: #dron; material.color: yellow"></a-box>
+        <a-box mixin="button" id="but_back" position=" 0 0 1"
+               event-set__back="_event: click; _target: #dron; material.color: yellow"></a-box>
+        <a-box mixin="button" id="but_up" position="0 0 1.5"
+               event-set__up="_event: click; _target: #dron; position.z += 0.1"></a-box>
+        <a-box mixin="button" id="but_down" position="-0.35 0 1.5"
+               event-set__down="_event: click; _target: #dron; material.color: yellow"></a-box>
+
+    </a-scene>
+</body>
+</html>
