@@ -22,4 +22,16 @@ addEventListener('evento', ()=> {
 }); 
 ```
 He incorporado los botones arriba y abajo de manera básica el siguiente objetivo será incluir aceleración, velocidad y componente temporal para crear más realismo en el movimiento. Duda sobre la componente temporal.
+```javascript
+bot_up.addEventListener('grab-start', () => {
+              console.log("DRON`S UP!");
+              dron.object3D.position.y += 0.5;
+              
+            })
+            
+            bot_down.addEventListener('grab-start', () => {
+              console.log("DRON`S DOWN!");
+              dron.object3D.position.y -= 0.5;
+            })
+```
 
