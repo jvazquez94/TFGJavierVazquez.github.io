@@ -29,7 +29,7 @@ bot_up.addEventListener('grab-start', () => {
               
             })
             
-            bot_down.addEventListener('grab-start', () => {
+bot_down.addEventListener('grab-start', () => {
               console.log("DRON`S DOWN!");
               dron.object3D.position.y -= 0.5;
             })
