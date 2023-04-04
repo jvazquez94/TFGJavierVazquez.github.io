@@ -8,36 +8,16 @@
     <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@^4.1.1/dist/aframe-event-set-component.min.js"></script>
-    <script>
-        AFRAME.registerComponent('dron-movement', {
-
-
-
-            init: function () {
-                var sceneEl = document.querySelector('a-scene');
-                var dron = sceneEl.querySelector('#dron');
-
-                var bot_up = sceneEl.querySelector('#boton_arriba');
-                var bot_down = sceneEl.querySelector('#boton_abajo');
-
-                var acceleration = 1;
-                var speed = 1;
-                var deltaTime = ;
-
-                bot_up.addEventListener('grab-start', () => {
-                    console.log("DRON`S UP!");
-                    dron.object3D.position.y += 0.5;
-
-                })
-
-                bot_down.addEventListener('grab-start', () => {
-                    console.log("DRON`S DOWN!");
-                    dron.object3D.position.y -= 0.5;
-                })
-
-            }
-        })
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@<version>/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@<version>/examples/jsm/"
+          }
+        }
     </script>
+    <script src="dron-movement.js"></script>
 </head>
 <body>
     <a-scene physics>
@@ -68,8 +48,10 @@
         </a-entity>
 
         <!--Dron-->
-        <a-entity dron-movenent dynamic-body="shape: box" id="dron" position="0 1 -3">
-            <a-box material="color: white" scale="0.5 0.5 0.5"></a-box>
+        <a-entity wasd-conrols dron-movenent id="dron" position="0 1 -3">
+            <a-box material="color: white" scale="0.5 0.5 0.5">
+                <a-box static-body material="transparent: true" scale= "0.52 0.52 0.52"></a-box>
+            </a-box>
         </a-entity>
         <!-------->
         <!--Controles-->
