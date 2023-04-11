@@ -1,31 +1,28 @@
-// Dron Movement
-import * as THREE from 'three';
 
-AFRAME.regiserComponent('dron-movement', {
-    var THREE = requite()
+
+AFRAME.registerComponent('dron-movement', {
+
     schema: {
-        acceleration: { default: 30 },
-        
-    },
+            acceleration: {default: 40},
+        },
 
     init: function () {
-        this.easing = 1.1;
-
-        this.velocity = new THREE.Vector3();
-
-
+        var el = this.el;
+        var velocity = new THREE.Vector3();       
+              
     },
+
 
     tick: function (time, delta) {
+      var dron = el.querySelector('#dron');
+        var bot_up = el.querySelector('#boton_arriba');
+        var velocity = this.velocity;
+        var posy = dron.object3D.position.y;
+        var target;
 
+        bot_up.addEventListener('click', function (event) {
+            pos += acceleration * delta;
+        });
     },
-
-    updateVel: function (delta) {
-
-    },
-
-    getMovementVector: (function () {
-
-    }),
 
 })
