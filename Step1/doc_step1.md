@@ -109,3 +109,5 @@ de la aceleración teniendo en cuenta el tiempo que ha pasado hasta ahora por ca
 - Establecer 2 clicks, el primero para llamar a componente de subir por ejemplo y luego con ese segundo click apagarlo.
 - Usar el inspector tanto como para ver si hemos asignado el componente correctamente al click como para ver por que desaperecen objetos de la escena,
   ya que puede deverse por subir muy rapido o variaciones muy rapidas.
+
+  Prueba Github desde VS Code (trabajo)
