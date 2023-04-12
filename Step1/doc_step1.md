@@ -95,13 +95,13 @@ Respuesta de movimiento con aceleración: https://gamedev.stackexchange.com/ques
 De la reunión de ayer con Jesús:
 Uso de la funcionalidad tick para cambiar la posición del dron, se usa cuando se produce cambio de pantalla (frames).
 Organizar en pasos simples para entendimiento e implementación:
-1)Hacer componente up al dron par asubor 0.01 unidad durante 100 veces/llamadas.
-2)Poner atributo a up: tiempo que quiero que suba X seg. Apartar en una propiedad el tiempo que está usando.
+1. Hacer componente up al dron par asubor 0.01 unidad durante 100 veces/llamadas.
+2. Poner atributo a up: tiempo que quiero que suba X seg. Apartar en una propiedad el tiempo que está usando.
 Podemos usar console.log para debugear pero tener en cuenta que ralentiza los procesos.
-3)Poner para que en cada tick suba un incremento, poner como propiedad.
-4)Establecer velocidad concreta: cuanto subo por cada tick por segundo. Esto se puede notar más lento de lo que se debe, luego hay que añadir la componente 
+3. Poner para que en cada tick suba un incremento, poner como propiedad.
+4. Establecer velocidad concreta: cuanto subo por cada tick por segundo. Esto se puede notar más lento de lo que se debe, luego hay que añadir la componente 
 de la aceleración teniendo en cuenta el tiempo que ha pasado hasta ahora por cada tick.
-5)Para aceleración (es más realista): es parecido pero con respecto a la variación de velocidad en vez de posicion.
+5. Para aceleración (es más realista): es parecido pero con respecto a la variación de velocidad en vez de posicion.
 
 - Tener en cuenta el código de los creadores del animate para avanzar.
 - Ser consistente con el calculo del tiempo en cada tick.
