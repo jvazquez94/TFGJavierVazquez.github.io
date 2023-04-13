@@ -95,7 +95,7 @@ Respuesta de movimiento con aceleración: https://gamedev.stackexchange.com/ques
 De la reunión de ayer con Jesús:
 Uso de la funcionalidad tick para cambiar la posición del dron, se usa cuando se produce cambio de pantalla (frames).
 Organizar en pasos simples para entendimiento e implementación:
-1. Hacer componente up al dron par asubor 0.01 unidad durante 100 veces/llamadas.
+1. Hacer componente up al dron para subir 0.01 unidad durante 100 veces/llamadas.
 2. Poner atributo a up: tiempo que quiero que suba X seg. Apartar en una propiedad el tiempo que está usando.
 Podemos usar console.log para debugear pero tener en cuenta que ralentiza los procesos.
 3. Poner para que en cada tick suba un incremento, poner como propiedad.
@@ -111,3 +111,135 @@ de la aceleración teniendo en cuenta el tiempo que ha pasado hasta ahora por ca
   ya que puede deverse por subir muy rapido o variaciones muy rapidas.
 
   Prueba Github desde VS Code (trabajo)
+
+  ---------------------------------------------------------------------------------
+
+  *13-04-2023*
+
+  image.png
+
+**.init():**
+.init() se le llama una vez para inicializar el ciclo de vida de los componentes. Una entidad puede llamar al componente del manejador init cuando:
+- El componente es estatico en el html y se carga la pagina por primera vez.
+- El componente se configura en una entidad adjunta a traves de setAttribute.
+- El componente se configura en una entidad no adjunta y la entidad esta adjunta a la escena via appendChild.
+- Configurar inicialmente estados y varibales.
+- Vincular metodos.
+- Adjuntar event listener.
+
+**.tick (tiempo, tiempoDelta):**
+.tick () es llamado en cada tick o frame del bucle de renderizado de la escena. La escena llamará al manejador de tick de un componente:
+
+- En cada fotograma del bucle de renderizado.
+- Del orden de 60 a 120 veces por segundo.
+- Si la entidad o la escena no están en pausa (por ejemplo, el Inspector está abierto).
+- Si la entidad sigue unida a la escena.
+
+El tick handler se utiliza a menudo para:
+
+- Modificar continuamente la entidad en cada fotograma o en un intervalo.
+- Buscar condiciones.
+- El tick handler recibe el tiempo global de la escena en milisegundos (time) y la diferencia de tiempo en milisegundos desde el último frame (timeDelta). - Estos valores pueden utilizarse para interpolación o para ejecutar sólo partes del controlador de ticks en un intervalo determinado.
+
+Por ejemplo, el componente de controles de seguimiento hará progresar las animaciones del controlador, actualizará la posición y la rotación del controlador y comprobará si se pulsan botones:
+
+```html
+AFRAME.registerComponent('tracked-controls', {
+  // ...
+  tick: function (time, timeDelta) {
+    this.updateMeshAnimation();
+    this.updatePose();
+    this.updateButtons();
+  }
+  // ...
+});
+```
+
+**.tock (tiempo, tiempoDelta, cámara):**
+Idéntico al método tick pero invocado después de que la escena se haya renderizado.
+
+El manejador tock se utiliza para ejecutar la lógica que necesita acceder a la escena dibujada antes de que sea empujado en el auricular como efectos de post-procesamiento.
+
+Añadir un receptor de eventos con .addEventListener()
+Al igual que con los elementos HTML normales, podemos registrar un listener de eventos con .addEventListener(eventName, function). Cuando se emita el evento para el que está registrado el listener, entonces se llamará a la función y manejará el evento. Por ejemplo, continuando desde el ejemplo anterior con el evento de colisión física:
+
+```html
+entityEl.addEventListener('physicscollided', function (event) {
+  console.log('Entidad colisionada con', event.detail.collidingEntity);
+});
+```
+
+Cuando la entidad emita el evento physicscollided, la función será llamada con el objeto del evento. Notablemente en el objeto del evento, tenemos el detalle del evento que contiene datos e información pasada a través del evento.
+
+PREGUNTAR A JESUS SOBRE CARGA DE ELEMNTOS VISUALES GLTF.
+
+**.update (oldData):**
+Se llama a .update (oldData) cada vez que cambian las propiedades del componente, incluso al principio del ciclo de vida del componente. Una entidad puede llamar al gestor de actualizaciones de un componente:
+
+- Después de llamar a init (), al principio del ciclo de vida del componente.
+- Cuando se actualizan las propiedades del componente con .setAttribute.
+
+El gestor de actualización se utiliza a menudo para:
+
+- Realizar la mayor parte del trabajo de modificación de la entidad, utilizando this.data.
+- Modificar la entidad siempre que cambien una o más propiedades del componente.
+- Las modificaciones granulares a la entidad se pueden hacer diferenciando el conjunto de datos actual (this.data) con el conjunto de datos anterior antes de la actualización (oldData).
+
+A-Frame llama a .update() tanto al principio del ciclo de vida de un componente como cada vez que cambian los datos de un componente (por ejemplo, como resultado de setAttribute). El gestor de actualizaciones suele utilizar this.data para modificar la entidad. El gestor de actualización tiene acceso al estado anterior de los datos de un componente a través de su primer argumento. Podemos utilizar los datos anteriores de un componente para saber exactamente qué propiedades cambiaron para hacer actualizaciones granulares.
+
+Por ejemplo, la actualización del componente visible establece la visibilidad de la entidad:
+
+```html
+AFRAME.registerComponent('visible', {
+  /**
+   * this.el is the entity element.
+   * this.el.object3D is the three.js object of the entity.
+   * this.data is the component's property or properties.
+   */
+  update: function (oldData) {
+    this.el.object3D.visible = this.data;
+  }
+  // ...
+});
+```
+
+Por rendimiento y ergonomía, recomendamos actualizar la posición directamente a través del Vector3 de three.js Object3D .position en lugar de a través de .setAttribute.
+
+Este método es más fácil porque tenemos acceso a todas las utilidades de Vector3, y más rápido al omitir la sobrecarga de .setAttribute y no necesitar crear un objeto para establecer la posición:
+
+```html
+// With three.js
+el.object3D.position.set(1, 2, 3);
+
+// With .setAttribute (less recommended).
+el.setAttribute('position', {x: 1, y: 2, z: 3});
+```
+
+También podemos hacer actualizaciones incrementales (que no es más que modificar un número) y utilizar las utilidades de Vector3:
+
+```html
+el.object3D.position.x += 1;
+el.object3D.position.multiplyScalar(2);
+el.object3D.position.sub(algunOtroVector);
+```
+
+**Vinculación de escuchadores de eventos**
+Por defecto, las reglas de contexto de ejecución de Javascript vinculan this al contexto global (ventana) para cualquier función independiente, lo que significa que estas funciones no tendrán acceso a this del componente por defecto.
+
+Para que el this del componente sea accesible dentro de un escuchador de eventos, debe ser enlazado.
+
+Hay varias formas de hacerlo:
+
+1. Utilizando una función de flecha para definir el receptor de eventos. Las funciones de flecha enlazan automáticamente this
+this.el.addEventListener('physicscollided', (event) => {
+    console.log(this.el.id);
+});
+2. Definiendo tu listener de eventos dentro del objeto events del componente (esto también se encargará de añadir y eliminar el listener automáticamente)
+
+Vea la explicación aquí.
+
+3. Creando otra función, que es la versión vinculada de la función.
+this.listeners = {
+    clickListener: this.clickListener.bind(this);
+}
+entityEl.addEventListener('click', this.listeners.clickListener);
