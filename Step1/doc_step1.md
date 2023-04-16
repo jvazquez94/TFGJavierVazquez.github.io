@@ -243,3 +243,30 @@ this.listeners = {
     clickListener: this.clickListener.bind(this);
 }
 entityEl.addEventListener('click', this.listeners.clickListener);
+
+-----------------------------------------------------------------------------------------------
+
+*16-04-2023*
+
+Tipos de propiedades
+Los tipos de propiedades definen principalmente cómo el esquema analiza los datos entrantes del DOM para cada propiedad. Los datos analizados estarán disponibles a través de la propiedad data en el prototipo del componente. Abajo están los tipos de propiedades incorporados en A-Frame:
+
+image.png
+
+Eventos
+El objeto events permite definir cómodamente controladores de eventos que se vinculan y se conectan y desconectan automáticamente en los momentos adecuados durante el ciclo de vida del componente:
+
+Se adjuntan en .play()
+Separados en .pause() y .remove()
+El uso de eventos asegura que los manejadores de eventos se limpian a sí mismos cuando la entidad o la escena se pausa, o el componente se separa. Si los manejadores de eventos de un componente se registran manualmente y no se separan correctamente, el manejador de eventos puede seguir disparándose incluso después de que el componente ya no exista.
+
+```html
+AFRAME.registerComponent('foo', {
+  events: {
+    click: function (evt) {
+      console.log('This entity was clicked!');
+      this.el.setAttribute('material', 'color', 'red');
+    }
+  }
+});
+```
