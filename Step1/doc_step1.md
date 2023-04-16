@@ -207,7 +207,7 @@ Por rendimiento y ergonomía, recomendamos actualizar la posición directamente 
 
 Este método es más fácil porque tenemos acceso a todas las utilidades de Vector3, y más rápido al omitir la sobrecarga de .setAttribute y no necesitar crear un objeto para establecer la posición:
 
-```html
+```js
 // With three.js
 el.object3D.position.set(1, 2, 3);
 
@@ -217,7 +217,7 @@ el.setAttribute('position', {x: 1, y: 2, z: 3});
 
 También podemos hacer actualizaciones incrementales (que no es más que modificar un número) y utilizar las utilidades de Vector3:
 
-```html
+```js
 el.object3D.position.x += 1;
 el.object3D.position.multiplyScalar(2);
 el.object3D.position.sub(algunOtroVector);
@@ -230,19 +230,23 @@ Para que el this del componente sea accesible dentro de un escuchador de eventos
 
 Hay varias formas de hacerlo:
 
-1. Utilizando una función de flecha para definir el receptor de eventos. Las funciones de flecha enlazan automáticamente this
+1. Utilizando una función de flecha para definir el receptor de eventos. Las funciones de flecha enlazan automáticamente this:
+```js
 this.el.addEventListener('physicscollided', (event) => {
     console.log(this.el.id);
 });
+```
 2. Definiendo tu listener de eventos dentro del objeto events del componente (esto también se encargará de añadir y eliminar el listener automáticamente)
 
 Vea la explicación aquí.
 
 3. Creando otra función, que es la versión vinculada de la función.
+```js
 this.listeners = {
     clickListener: this.clickListener.bind(this);
 }
 entityEl.addEventListener('click', this.listeners.clickListener);
+```
 
 -----------------------------------------------------------------------------------------------
 
