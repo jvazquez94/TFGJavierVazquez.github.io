@@ -56,7 +56,7 @@ En el js las definiciones de variables y los console.log deben ir dentro de las 
 En la página de A-frame: https://aframe.io/docs/1.4.0/introduction/writing-a-component.html#defining-a-behavior-with-the-tick-handler
 Explica como implementar en js el movimiento de un objeto siguiendo a otro.
 Si miramos el codigo, inicializa el vector de posicion que usara para el movimiento de seguimiento:
-```html
+```js
 AFRAME.registerComponent('follow', {
   schema: {
     target: {type: 'selector'},
@@ -70,7 +70,7 @@ AFRAME.registerComponent('follow', {
 ```
 Despues en la funcion tick inicializa las variables del vector, del target y current position y copia la direction del current
 al del target:
-```html
+```js
  tick: function (time, timeDelta) {
     var directionVec3 = this.directionVec3;
 
@@ -143,7 +143,7 @@ El tick handler se utiliza a menudo para:
 
 Por ejemplo, el componente de controles de seguimiento hará progresar las animaciones del controlador, actualizará la posición y la rotación del controlador y comprobará si se pulsan botones:
 
-```html
+```js
 AFRAME.registerComponent('tracked-controls', {
   // ...
   tick: function (time, timeDelta) {
@@ -163,7 +163,7 @@ El manejador tock se utiliza para ejecutar la lógica que necesita acceder a la 
 Añadir un receptor de eventos con .addEventListener()
 Al igual que con los elementos HTML normales, podemos registrar un listener de eventos con .addEventListener(eventName, function). Cuando se emita el evento para el que está registrado el listener, entonces se llamará a la función y manejará el evento. Por ejemplo, continuando desde el ejemplo anterior con el evento de colisión física:
 
-```html
+```js
 entityEl.addEventListener('physicscollided', function (event) {
   console.log('Entidad colisionada con', event.detail.collidingEntity);
 });
@@ -189,7 +189,7 @@ A-Frame llama a .update() tanto al principio del ciclo de vida de un componente 
 
 Por ejemplo, la actualización del componente visible establece la visibilidad de la entidad:
 
-```html
+```js
 AFRAME.registerComponent('visible', {
   /**
    * this.el is the entity element.
@@ -261,7 +261,7 @@ Se adjuntan en .play()
 Separados en .pause() y .remove()
 El uso de eventos asegura que los manejadores de eventos se limpian a sí mismos cuando la entidad o la escena se pausa, o el componente se separa. Si los manejadores de eventos de un componente se registran manualmente y no se separan correctamente, el manejador de eventos puede seguir disparándose incluso después de que el componente ya no exista.
 
-```html
+```js
 AFRAME.registerComponent('foo', {
   events: {
     click: function (evt) {
