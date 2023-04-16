@@ -116,7 +116,7 @@ de la aceleración teniendo en cuenta el tiempo que ha pasado hasta ahora por ca
 
   *13-04-2023*
 
-  image.png
+  ![image](https://user-images.githubusercontent.com/36034121/232315461-7aef1053-f47c-4563-809a-35f3b9427f50.png)
 
 **.init():**
 .init() se le llama una vez para inicializar el ciclo de vida de los componentes. Una entidad puede llamar al componente del manejador init cuando:
@@ -251,7 +251,8 @@ entityEl.addEventListener('click', this.listeners.clickListener);
 Tipos de propiedades
 Los tipos de propiedades definen principalmente cómo el esquema analiza los datos entrantes del DOM para cada propiedad. Los datos analizados estarán disponibles a través de la propiedad data en el prototipo del componente. Abajo están los tipos de propiedades incorporados en A-Frame:
 
-image.png
+![image](https://user-images.githubusercontent.com/36034121/232315375-ad8a3916-41ad-4666-a5d8-fe5c465207c7.png)
+
 
 Eventos
 El objeto events permite definir cómodamente controladores de eventos que se vinculan y se conectan y desconectan automáticamente en los momentos adecuados durante el ciclo de vida del componente:
