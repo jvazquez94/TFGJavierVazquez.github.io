@@ -127,6 +127,20 @@ de la aceleración teniendo en cuenta el tiempo que ha pasado hasta ahora por ca
 - Vincular metodos.
 - Adjuntar event listener.
 
+```js
+AFRAME.registerComponent('cursor', {
+  // ...
+  init: function () {
+    // Set up initial state and variables.
+    this.intersection = null;
+    // Bind methods.
+    this.onIntersection = AFRAME.utils.bind(this.onIntersection, this);
+    // Attach event listener.
+    this.el.addEventListener('raycaster-intersection', this.onIntersection);
+  }
+  // ...
+``` 
+
 **.tick (tiempo, tiempoDelta):**
 .tick () es llamado en cada tick o frame del bucle de renderizado de la escena. La escena llamará al manejador de tick de un componente:
 
@@ -272,6 +286,23 @@ AFRAME.registerComponent('foo', {
       console.log('This entity was clicked!');
       this.el.setAttribute('material', 'color', 'red');
     }
+  }
+});
+```
+----------------------------------------------------------------------
+
+*17-04-2023*
+
+A traves del this.data.[schema_type] accedemos al dato del esquema de nuestra componente: 
+
+```js
+AFRAME.registerComponent('log', {
+  schema: {
+    message: {type: 'string', default: 'Hello, World!'}
+  },
+
+  init: function () {
+    console.log(this.data.message);
   }
 });
 ```
