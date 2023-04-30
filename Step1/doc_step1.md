@@ -306,3 +306,12 @@ AFRAME.registerComponent('log', {
   }
 });
 ```
+
+
+----------------------------------------------------------------------
+
+*30-04-2023*
+
+Para que se pueda aplicar cambios de posición a un elemento de la escena con un componente registrado es preciso que no tenga la etiqueta de dynamic-body. Con la etiqueta de static-body si que se puede aplicar esos cambios.
+
+Ya he establecito como subir y parar al subir, preguntar duda de por que reacciona a veces y otras veces no.
