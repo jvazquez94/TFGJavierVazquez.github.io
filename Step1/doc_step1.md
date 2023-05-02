@@ -315,3 +315,12 @@ AFRAME.registerComponent('log', {
 Para que se pueda aplicar cambios de posición a un elemento de la escena con un componente registrado es preciso que no tenga la etiqueta de dynamic-body. Con la etiqueta de static-body si que se puede aplicar esos cambios.
 
 Ya he establecito como subir y parar al subir, preguntar duda de por que reacciona a veces y otras veces no.
+
+----------------------------------------------------------------------
+
+*01-05-2023*
+
+Para definir los estados de movimiento del dron, PARADO -> SUBIR ; PARADO -> BAJAR ; SUBIR -> BAJAR ; SUBIR -> PARADO; BAJAR -> PARADO; BAJAR -> SUBIR, hay que hacerlo en la función init que es donde inicializamos los estados y luego vamos cambiando en cada tick los cambios de las componentes del schema. Ya que si lo hacemos desde el tick nos crea las componentes muchisimas veces por segundo debido a la frecuencia del tick, instanciando componente de los botones cada vez que se le llama, por eso llega a crear tantas en tan poco tiempo que genera cambios de estado raros.
+
+----------------------------------------------------------------------
+
