@@ -324,3 +324,7 @@ Para definir los estados de movimiento del dron, PARADO -> SUBIR ; PARADO -> BAJ
 
 ----------------------------------------------------------------------
 
+*14-05-2023*
+
+Hemos definido el movimiento de forma más fluida sin necesidad de estados cada vez que se pulse o despulse un boton
+el evento mouseup o mousedown entra en acción y le suma a la posicion actual una velocidad.

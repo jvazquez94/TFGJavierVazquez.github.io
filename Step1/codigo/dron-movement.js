@@ -1,156 +1,167 @@
-    AFRAME.registerComponent('movement', { 
-        schema: {
-            activadoup: {type: 'boolean', default: 'false'},
-            activadodown: {type: 'boolean', default: 'false'},
-            activadostraight: {type: 'boolean', default: 'false'},
-            activadoback: {type: 'boolean', default: 'false'},
-            activadoright: {type: 'boolean', default: 'false'},
-            activadoleft: {type: 'boolean', default: 'false'},
-            clickup: {type: 'int', default: 0},
-            clickdown: {type: 'int', default: 0}
+    AFRAME.registerComponent('movement2', {
+        schema:{
+            acceleration: {type: 'float', default: 5},
+            decceleration: {type: 'float', default: 0.09},
+            maxSpeed: {type: 'float', default: 30}
         },
 
         init: function(){
-            var scene = document.querySelector('a-scene');
-            var btnup = scene.querySelector('#boton_arriba');
-            var btndown = scene.querySelector('#boton_abajo');
-            var btnstraight = scene.querySelector('#boton_recto');
-            var btnback = scene.querySelector('#boton_atras');
-            var btnright = scene.querySelector('#boton_der');
-            var btnleft = scene.querySelector('#boton_izq');
-
-            //Inicializamos los estados para el boton de recto
-            btnstraight.addEventListener('click', (event)=>{            
-                this.data.activadostraight = true; 
-                this.data.activadoback = false;
-                    
-            });
+            this.dron = document.querySelector('#dron');
+            this.velocity = new THREE.Vector3(0, 0, 0);
+            this.btnup = document.querySelector('#boton_arriba');
+            this.btndown = document.querySelector('#boton_abajo');
+            this.btnfwd = document.querySelector('#boton_recto');
+            this.btnback = document.querySelector('#boton_atras');
+            this.btnright = document.querySelector('#boton_der');
+            this.btnleft = document.querySelector('#boton_izq');
             
 
-            btnback.addEventListener('click', (event)=>{
-                this.data.activadoback = true;
-                this.data.activadostraight = false; 
-            });
-            
+            this.btnup.addEventListener('mousedown', this.buttonUpPress.bind(this));
+            this.btnup.addEventListener('mouseup', this.buttonUpRelease.bind(this));
 
-            btnright.addEventListener('click', (event)=>{
-                this.data.activadoright = true;
-                this.data.activadoleft = false;
-            });
-            
+            this.btndown.addEventListener('mousedown', this.buttonDownPress.bind(this));
+            this.btndown.addEventListener('mouseup', this.buttonDownRelease.bind(this));
 
-            btnleft.addEventListener('click', (event)=>{
-                this.data.activadoleft = true;
-                this.data.activadoright = false;
-            });
-            
+            this.btnfwd.addEventListener('mousedown', this.buttonFwdPress.bind(this));
+            this.btnfwd.addEventListener('mouseup', this.buttonFwdRelease.bind(this));
 
-            //Inicializamos los estados para el boton de subir
-            btnup.addEventListener('click', (event)=>{            
-                
-            if(this.data.clickup == 0 && this.data.clickdown == 0){ //Estado: PARADO -> SUBIR
-                    this.data.activadoup = true;
-                    this.data.clickup = 1;
-                    this.data.activadodown = false;
-            }else if(this.data.clickup == 0 && this.data.clickdown == 1){ //Estado: BAJANDO -> SUBIR
-                    this.data.activadoup = true;
-                    this.data.clickup = 1;
-                    this.data.clickdown = 0;
-                    this.data.activadodown = false;
-                
-            }else if(this.data.clickup == 1 && this.data.clickdown == 0){ //Estado: SUBIENDO -> PARAR
-                    this.data.activadoup = false;
-                    this.data.clickup = 0;
-                    this.data.activadodown = false;
-            }           
-            });
+            this.btnback.addEventListener('mousedown',this.buttonBackPress.bind(this));
+            this.btnback.addEventListener('mouseup', this.buttonBackRelease.bind(this));
+
+            this.btnright.addEventListener('mousedown', this.buttonRightPress.bind(this));
+            this.btnright.addEventListener('mouseup', this.buttonRightRelease.bind(this));
+
+            this.btnleft.addEventListener('mousedown', this.buttonLeftPress.bind(this));
+            this.btnleft.addEventListener('mouseup', this.buttonLeftRelease.bind(this));
+        },
             
-            //Inicializamos los estados para el boton de bajar
-            btndown.addEventListener('click', (event)=>{
-                
-                if(this.data.clickup == 0 && this.data.clickdown == 0){//Estado: PARADO -> BAJAR
-                    this.data.activadodown = true;
-                    this.data.clickdown = 1;
-                    this.data.activadoup = false;
-            }else if(this.data.clickup == 0 && this.data.clickdown == 1){//Estado: BAJANDO -> PARAR
-                    this.data.activadodown = false;
-                    this.data.clickdown = 0;
-                    this.data.activadoup = false;
-            }else if(this.data.clickup == 1 && this.data.clickdown == 0){//Estado: SUBIENDO -> BAJAR
-                    this.data.activadodown = true;
-                    this.data.clickdown = 1;
-                    this.data.activadoup = false;
-                    this.data.clickup = 0;
-            }           
-            });
+        buttonUpPress: function () {
+            this.velocity.y += this.data.acceleration;
         },
 
-        tick: function(time, timeDelta){ 
-            var data = this.data; 
-            var el = this.el; 
+        buttonUpRelease: function(){
+            this.velocity.y = 0;
+        }, 
+        
+        buttonDownPress: function(){
+            this.velocity.y -= this.data.acceleration;
+        },
 
-            if(data.activadoup){
-                el.object3D.position.y += 0.01;
-            }else if(data.activadodown){
-                el.object3D.position.y -= 0.01;
+        buttonDownRelease: function(){
+            this.velocity.y = 0;
+        },
+
+        buttonFwdPress: function(){
+            this.velocity.z -= this.data.acceleration;
+        },
+
+        buttonFwdRelease: function(){
+            this.velocity.z = 0;
+        },
+
+        buttonBackPress: function(){
+            this.velocity.z += this.data.acceleration;
+        },
+
+        buttonBackRelease: function(){
+            this.velocity.z = 0;
+        },
+
+        buttonRightPress: function(){
+            this.velocity.x += this.data.acceleration;
+        },
+
+        buttonRightRelease: function(){
+            this.velocity.x = 0;
+        },
+
+        buttonLeftPress: function(){
+            this.velocity.x -= this.data.acceleration;
+        },
+
+        buttonLeftRelease: function(){
+            this.velocity.x = 0;
+        },
+
+        tick: function(time, Timedelta){
+            var delta = Timedelta / 1000;
+
+            if(this.velocity.lengthSq() > 0){
+                const deccelVector = this.velocity.clone().normalize().multiplyScalar(-1 * this.data.decceleration);
+                this.velocity.add(deccelVector);
             }
-            
-            if(data.activadostraight){
-                el.object3D.position.z -= 0.01; //alejarse hacia adelante en el eje z es -
-            }else if(data.activadoback){
-                el.object3D.position.z += 0.01;
+
+            if(this.velocity.length() > this.data.maxSpeed){
+                this.velocity.normalize().multiplyScalar(this.maxSpeed);
             }
-            
-            if(data.activadoright){
-                el.object3D.position.x += 0.01;
-            }else if(data.activadoleft){
-                el.object3D.position.x -= 0.01;
-            }
+
+            const displacement = this.velocity.clone().multiplyScalar(delta);
+            this.dron.object3D.position.add(displacement);
         }
     }),
 
+    
     AFRAME.registerComponent('botonup', {
         events: {
-            click: function(evt){
+            mousedown: function(evt){
                 console.log("El elemento boton_arriba ha sido CLICKEADO!");
+            },
+
+            mouseup: function(evt){
+                console.log("El elemento boton_arriba ha sido DESCLICKEADO!");
             }
         },
     }),
 
     AFRAME.registerComponent('botondown', {
         events: {
-            click: function(evt){
+            mousedown: function(evt){
                 console.log("Elemento boton_abajo ha sido CLICKEADO");
+            },
+            mouseup: function(evt){
+                console.log("El elemento boton_abajo ha sido DESCLICKEADO!");
             }
         }
     }),
 
-    AFRAME.registerComponent('btnstraight', {
+    AFRAME.registerComponent('botonstraight', {
         events: {
-            click: function(evt){
+            mousedown: function(evt){
                 console.log("El elemento boton_recto ha sido CLICKEADO!");
+            },
+            mouseup: function(evt){
+                console.log("El elemento boton_recto ha sido DESCLICKEADO!");
             }
         },
     }),
 
-    AFRAME.registerComponent('btnback', {
+    AFRAME.registerComponent('botonback', {
         events: {
-            click: function(evt){
+            mousedown: function(evt){
                 console.log("El elemento boton_atras ha sido CLICKEADO!");
+            },
+            mouseup: function(evt){
+                console.log("El elemento boton_atras ha sido DESCLICKEADO!");
             }
         },
     }),
-    AFRAME.registerComponent('btnright', {
+    AFRAME.registerComponent('botonright', {
         events: {
-            click: function(evt){
+            mousedown: function(evt){
                 console.log("El elemento boton_derch ha sido CLICKEADO!");
+            },
+            mouseup: function(evt){
+                console.log("El elemento boton_derch ha sido DESCLICKEADO!");
             }
         },
     }),
-    AFRAME.registerComponent('btnleft', {
+    AFRAME.registerComponent('botonleft', {
         events: {
-            click: function(evt){
+            mousedown: function(evt){
                 console.log("El elemento boton_izq ha sido CLICKEADO!");
+            },
+            mouseup: function(evt){
+                console.log("El elemento boton_izq ha sido DESCLICKEADO!");
             }
         },
     })
