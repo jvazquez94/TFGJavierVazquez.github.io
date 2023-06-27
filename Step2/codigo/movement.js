@@ -1,4 +1,4 @@
-    AFRAME.registerComponent('movement2', {
+    AFRAME.registerComponent('movement', {
         schema:{
             acceleration: {type: 'float', default: 5},
             decceleration: {type: 'float', default: 0.09},
