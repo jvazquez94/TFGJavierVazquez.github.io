@@ -1,7 +1,7 @@
 # TFG
 
 
-Proyecto sobre control de drones en webVR con Aframe; en desarrollo en la plataforma de Glitch.
+Proyecto sobre control de drones en webVR con Aframe.
 
 **Step prev ->** manejo de la herramienta con tutorial de Youtube 
 
