@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.1.0/dist/aframe-physics-system.js"></script>
+    <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.1.1/dist/aframe-event-set-component.min.js"></script>
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script src="movimiento.js"></script>
+    <script src="camrender.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+
+        </a-assets>
+
+        <!--camara principal-->
+        <a-entity camera look-controls wasd-controls id="cam1" position="0 2 8" rotation="-10 0 0"></a-entity>
+
+        <!--Plano del suelo-->
+        <a-box color="grey" position="0 -1 0" depth="10" width="10" height="0.25" shadow="receive: true"></a-box>
+
+        <!--Dron 1-->
+        <a-box mov="coors: 0 10 0,10 10 0,10 10 10" color="green" position="0 0 4.5"></a-box>
+
+    </a-scene>
+</body>
+</html>
